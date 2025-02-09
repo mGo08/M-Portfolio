@@ -1,16 +1,15 @@
 import {useState} from "react";
 import "./App.css";
 import {Navbar} from "./components/Navbar";
+import { LoadingScreen } from "./components/LoadingScreen";
 import {MobileMenu} from "./components/MobileMenu";
 import {Home} from "./components/sections/Home";
 import {About} from "./components/sections/About";
 import {Projects} from "./components/sections/Projects";
 import {Contact} from "./components/sections/Contact";
-import {Spotlight} from "./components/ui/spotlight-new";
-import "@fontsource/nokora";
-import "@fontsource/nokora/400.css";
-import "@fontsource/inter";
-import "@fontsource/inter/400.css";
+import "@fontsource/roboto"; // Defaults to weight 400
+import "@fontsource/roboto/400.css"; // Specify weight
+import "@fontsource/roboto/400-italic.css"; // Specify weight and style
 import "./index.css";
 
 function App() {
@@ -18,10 +17,13 @@ function App() {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <> < div className = {
-            `min-h-screen transition-opacity duration-700 "opacity-100" : "opacity-0"
-        } bg-[#1E201E] text-gray-100`
-        } > <Spotlight/>
+        <>
+      {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}{" "}
+      <div
+        className={`min-h-screen transition-opacity duration-700 ${
+          isLoaded ? "opacity-100" : "opacity-0"
+        } bg-[#FFFFFF]`}
+      >
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
         <Home/>

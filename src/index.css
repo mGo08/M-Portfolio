@@ -9,33 +9,63 @@ html, body {
 }
 
 @layer utilities {
-  @keyframes blink {
-    0%,
+  @keyframes text-fade-shrink {
+    0% {
+      opacity: 0;
+      transform: scale(1.25);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-text-fade-shrink {
+    animation: text-fade-shrink 1s ease-in-out forwards;
+  }
+
+  @keyframes text-fade-out {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+  }
+
+  .animate-text-fade-out {
+    animation: text-fade-out 1s ease-in-out forwards;
+  }
+
+  @keyframes loading-bar-fade {
+    0% {
+      opacity: 0;
+    }
     100% {
       opacity: 1;
     }
-    50% {
+  }
+
+  @keyframes loading-bar-fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
       opacity: 0;
     }
   }
 
-  .animate-blink {
-    animation: blink 0.8s step-end infinite;
+  .animate-loading-bar-fade {
+    animation: loading-bar-fade 1s ease-in-out forwards;
   }
 
-  @keyframes loading {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(250%);
-    }
-  }
-
-  .animate-loading-bar {
-    animation: loading 0.8s ease infinite;
+  .animate-loading-bar-fade-out {
+    animation: loading-bar-fade-out 1s ease-in-out forwards;
   }
 }
+
 
 .reveal {
   opacity: 0;
@@ -51,5 +81,6 @@ html, body {
 @theme {
   --font-inter: 'Inter';
   --font-nokora: 'Nokora';
+  --font-roboto: 'Roboto';
 }
 
