@@ -4,7 +4,7 @@ export const MobileMenu = ({menuOpen, setMenuOpen}) => {
     return (
         <div
             className={`fixed top-0 left-0 w-full bg-gray-800/95 z-40 flex flex-col items-center justify-center
-                     transition-all duration-300 ease-in-out font-inter
+                     transition-all duration-300 ease-in-out font-roboto
                      ${
             menuOpen
                 ? "h-screen opacity-100 pointer-events-auto"
@@ -19,7 +19,7 @@ export const MobileMenu = ({menuOpen, setMenuOpen}) => {
 
             <div className="flex flex-col items-center space-y-8">
                 {
-                    ["home", "about", "works", "contact"].map((item, index) => (
+                    ["home", "about", "projects", "contact"].map((item, index) => (
                         <a
                             key={index}
                             href={`#${item}`}
