@@ -22,7 +22,7 @@ export const About = () => {
                         className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-5 mb-12">
 
                         <img
-                            src="/fami.jpg"
+                            src="/family.jpg"
                             alt="Profile"
                             className="w-56 h-56 rounded-md object-cover shadow-lg md:mr-6"/>
                         <div className="flex flex-col items-center md:items-start">
