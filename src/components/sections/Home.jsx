@@ -14,7 +14,7 @@ export const Home = () => {
             <RevealOnScroll>
                 <div className="text-center z-10 px-4 relative">
                     <h1
-                        className="font-roboto text-5xl md:text-8xl font-bold mb-6 text-[#363636]">
+                        className="font-roboto text-5xl md:text-8xl font-bold mb-6 bg-gradient-to-t from-slate-700 via-slate-400 to-slate-700 bg-clip-text text-transparent  ">
                         creative designer
                         <br/>
                         & developer.
