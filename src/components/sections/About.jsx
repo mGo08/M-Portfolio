@@ -13,7 +13,7 @@ export const About = () => {
             <RevealOnScroll>
                 <div className="max-w-4xl w-full mx-auto px-6 relative z-10">
                     <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-6 mb-12">
-                        <img src="/public/M-Portfolio/family.png" className="w-56 h-56 rounded-md object-cover shadow-lg md:mr-6" />
+                        <img src="/family.png" className="w-56 h-56 rounded-md object-cover shadow-lg md:mr-6" />
                         <div className="flex flex-col items-center md:items-start w-full font-roboto">
                             <h2 className="text-[#363636] text-2xl font-bold tracking-wide mb-1">Mardelito T. Go</h2>
                             <p className="text-[#363636] font-medium tracking-wide mb-1">UI/UX Designer & Front-End Developer</p>
