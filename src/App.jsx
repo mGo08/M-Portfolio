@@ -11,6 +11,7 @@ import "@fontsource/roboto"; // Defaults to weight 400
 import "@fontsource/roboto/400.css"; // Specify weight
 import "@fontsource/roboto/400-italic.css"; // Specify weight and style
 import "./index.css";
+import MetaTags from './MetaTags';
 
 function App() {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -23,7 +24,7 @@ function App() {
         className={`min-h-screen transition-opacity duration-700 ${
           isLoaded ? "opacity-100" : "opacity-0"
         } bg-[#FFFFFF]`}
-      >
+      ><MetaTags />
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
         <Home/>
