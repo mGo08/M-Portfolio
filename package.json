@@ -1,7 +1,7 @@
 {
   "name": "m-portfolio",
+  "homepage": "https://m-portfolio-1xnewsvzv-mgo08s-projects.vercel.app/",
   "private": true,
-  "homepage": "https://m-portfolio-chi.vercel.app/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
