@@ -10,7 +10,7 @@ export const Home = () => {
             className="relative min-h-screen flex items-center justify-center overflow-hidden font-roboto">
             
             <div className="absolute inset-0 w-full h-full opacity-70">
-                <ParallaxBackground imageUrl="/M-Portfolio/blob.png" />
+                <ParallaxBackground imageUrl="/public/M-Portfolio/blob.png" />
             </div>
 
             <RevealOnScroll>
