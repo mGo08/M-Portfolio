@@ -3,8 +3,8 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const softwares = ["Figma", "Adobe Photoshop", "Adobe Illustrator"];
 const webSkills = [
-    "HTML 5", "CSS 3", "JavaScript", "TypeScript", "React JS", "Node JS",
-    "React Native", "Firebase", "GraphQL", "MongoDB", "Git", "NPM"
+    "HTML 5", "CSS 3", "JavaScript", "React JS", "Node JS",
+     "Firebase", "MySQL", "MongoDB", "Git", "NPM"
 ];
 
 export const About = () => {

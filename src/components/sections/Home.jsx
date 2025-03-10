@@ -46,7 +46,6 @@ export const Home = () => {
                         
                         <motion.a
                             href="#projects"
-                            whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="bg-[#363636] text-white py-3 px-6 rounded-lg shadow-lg font-medium 
                             transition-transform duration-300 ease-in-out relative overflow-hidden 
@@ -56,7 +55,6 @@ export const Home = () => {
 
                         <motion.a
                             href="#contact"
-                            whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="border border-[#363636] text-[#363636] py-3 px-6 rounded-lg font-medium 
                             transition-all duration-300 ease-in-out hover:shadow-md">
