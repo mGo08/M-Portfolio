@@ -3,8 +3,8 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const softwares = ["Figma", "Adobe Photoshop", "Adobe Illustrator"];
 const webSkills = [
-    "HTML 5", "CSS 3", "JavaScript", "React JS", "Node JS",
-     "Firebase", "MySQL", "MongoDB", "Git", "NPM"
+    "HTML", "CSS", "JavaScript", "React JS", "Node JS",
+     "Express.js", "MySQL", "MongoDB", "Git", "NPM"
 ];
 
 export const About = () => {
@@ -42,7 +42,6 @@ export const About = () => {
                             <h3 className="text-xl font-bold mb-4 text-[#363636]">Education</h3>
                             <ul className="list-disc list-inside text-[#363636] space-y-2">
                                 <li><strong>B.S. in Computer Science</strong> - Mapúa Malayan Colleges Mindanao (2023 - Present)</li>
-                                <li>Relevant Coursework: Data Structures, Web Development, Cloud Computing...</li>
                             </ul>
                         </div>
                         <div className="p-6">
