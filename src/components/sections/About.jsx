@@ -32,7 +32,7 @@ export const About = () => {
                             </div>
 
                             <p className="text-[#363636] tracking-wide leading-relaxed text-justify">
-                                I’m Mardelito “MJ” Go, a 20-year-old Computer Science undergraduate at Mapúa Malayan Colleges Mindanao. Passionate about crafting engaging and responsive web experiences, I specialize in creating intuitive interfaces using modern front-end technologies. 🚀
+                                I’m Mardelito “MJ” Go, a 21-year-old Computer Science undergraduate at Mapúa Malayan Colleges Mindanao. Passionate about crafting engaging and responsive web experiences, I specialize in creating intuitive interfaces using modern front-end technologies. 🚀
                             </p>
                         </div>
                     </div>
@@ -41,6 +41,7 @@ export const About = () => {
                         <div className="p-6">
                             <h3 className="text-xl font-bold mb-4 text-[#363636]">Education</h3>
                             <ul className="list-disc list-inside text-[#363636] space-y-2">
+                                <li><strong>ICT High School Graduate</strong> - Mapúa Malayan Colleges Mindanao (2021 - 2023)</li>
                                 <li><strong>B.S. in Computer Science</strong> - Mapúa Malayan Colleges Mindanao (2023 - Present)</li>
                             </ul>
                         </div>
@@ -48,12 +49,8 @@ export const About = () => {
                             <h3 className="text-xl font-bold mb-4 text-[#363636]">Experience</h3>
                             <div className="space-y-4 text-[#363636] text-md">
                                 <div>
-                                    <h4 className="font-semibold">Front-End Developer Intern at XYZ Corp (2024)</h4>
-                                    <p>Developed and maintained responsive user interfaces for web applications.</p>
-                                </div>
-                                <div>
-                                    <h4 className="font-semibold">Junior Web Developer at DEF Startups (2025)</h4>
-                                    <p>Assisted in building front-end components and integrating REST APIs.</p>
+                                    <h4 className="font-semibold">Head Graphic Designer at KLUBB88 RESTO BAR (2021-2022)</h4>
+                                    <p>As the Head Graphic Designer, I was responsible for overseeing the creation and management of all marketing materials, ensuring consistency in design across various social media platforms</p>
                                 </div>
                             </div>
                         </div>
