@@ -16,7 +16,7 @@ export const About = () => {
                         <img src="/family.jpg" className="w-56 h-56 rounded-md object-cover shadow-lg md:mr-6" />
                         <div className="flex flex-col items-center md:items-start w-full font-roboto">
                             <h2 className="text-[#363636] text-2xl font-bold tracking-wide mb-1">Mardelito T. Go</h2>
-                            <p className="text-[#363636] font-medium tracking-wide mb-1">UI/UX Designer & Front-End Developer</p>
+                            <p className="text-[#363636] font-medium tracking-wide mb-1">Graphic Designer & Front-End Developer</p>
                             <p className="text-[#363636] text-sm mb-4 tracking-wider">📍 Davao City, Philippines.</p>
                             
                             <div className="flex gap-5 mb-4">

@@ -85,7 +85,7 @@ export const Projects = () => {
                                     : "border-[#363636]/30 text-[#363636] hover:bg-[#363636]/10"
                             }`}
                         >
-                            Web Design
+                            Web Projects
                         </button>
                         <button
                             onClick={() => setActiveCategory("graphic")}
@@ -95,7 +95,7 @@ export const Projects = () => {
                                     : "border-[#363636]/30 text-[#363636] hover:bg-[#363636]/10"
                             }`}
                         >
-                            Graphic Design
+                            Graphic Designs
                         </button>
                     </div>
 
