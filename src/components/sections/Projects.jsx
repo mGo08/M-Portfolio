@@ -15,11 +15,19 @@ import graphic7Image from "../../assets/thehappybaker.png";
 import graphic8Image from "../../assets/graphic2.jpg";
 import graphic9Image from "../../assets/magwz2.png";
 import graphic10Image from "../../assets/pt2_nymagazine.png";
+import graphic11Image from "../../assets/noctura.webp";
 
 export const Projects = () => {
     const [activeCategory, setActiveCategory] = useState("web");
 
     const webProjects = [
+        {
+            title: "noctura",
+            image: graphic11Image,
+            desc: "The Noctura landing page is a bold and stylish pre-launch site designed for an upcoming apparel brand. Featuring a sleek black-and-white color palette, it captures attention with strong typography and minimalistic layouts. The page highlights the brand’s modern aesthetic with high-fashion photography and clean, modular sections.",
+            tech: ["HTML", "CSS", "JavaScript", "React JS", "Tailwind CSS"],
+        },
+
         {
             title: "BYTEBISTRO",
             image: previewImage,
@@ -51,7 +59,9 @@ export const Projects = () => {
     ];
 
     const graphicProjects = [
+        { image: graphic11Image },
         { image: graphic1Image },
+        { image: previewImage },
         { image: graphic2Image },
         { image: graphic3Image },
         { image: graphic4Image },
@@ -85,7 +95,7 @@ export const Projects = () => {
                                     : "border-[#363636]/30 text-[#363636] hover:bg-[#363636]/10"
                             }`}
                         >
-                            Web Projects
+                            Projects
                         </button>
                         <button
                             onClick={() => setActiveCategory("graphic")}
@@ -158,7 +168,7 @@ export const Projects = () => {
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
     transition={{ duration: 0.6 }}
-    className="columns-1 md:columns-2 gap-6 space-y-6"
+    className="columns-2 md:columns-1 gap-6 space-y-6"
 >
     {graphicProjects.map((project, index) => (
         <motion.div
