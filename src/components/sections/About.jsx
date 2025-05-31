@@ -48,10 +48,18 @@ export const About = () => {
                         <div className="p-6">
                             <h3 className="text-xl font-bold mb-4 text-[#363636]">Experience</h3>
                             <div className="space-y-4 text-[#363636] text-md">
-                                <div>
-                                    <h4 className="font-semibold">Head Graphic Designer at KLUBB88 RESTO BAR (2021-2022)</h4>
-                                    <p>As the Head Graphic Designer, I was responsible for overseeing the creation and management of all marketing materials, ensuring consistency in design across various social media platforms</p>
-                                </div>
+                            <div>
+                                <h4 className="font-semibold">Head Graphic Designer at KLUBB88 RESTO BAR (2021–2022)</h4>
+                                <p className="text-justify">
+                                    As the Head Graphic Designer, I was responsible for overseeing the creation and management of all marketing materials, ensuring consistency in design across various social media platforms.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 className="font-semibold">Creative & Brand Designer at Bout It Merch (2025)</h4>
+                                <p className="text-justify">
+                                Currently working part-time as a Creative Designer at Bout It Merch, designing custom merchandise and marketing assets for clients in industries like craft beer and fitness. I produce high-quality mockups, social media content, and branded presentations.
+                                </p>
+                            </div>
                             </div>
                         </div>
                     </div>

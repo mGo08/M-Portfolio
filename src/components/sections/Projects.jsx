@@ -16,6 +16,9 @@ import graphic8Image from "../../assets/graphic2.jpg";
 import graphic9Image from "../../assets/magwz2.png";
 import graphic10Image from "../../assets/pt2_nymagazine.png";
 import graphic11Image from "../../assets/noctura.webp";
+import graphic12Image from "../../assets/PassionProduct-Logo.png";
+import graphic13Image from "../../assets/Copy of carousel_cap_2.png";
+import graphic14Image from "../../assets/figma_thumbnail.png";
 
 export const Projects = () => {
     const [activeCategory, setActiveCategory] = useState("web");
@@ -60,7 +63,10 @@ export const Projects = () => {
 
     const graphicProjects = [
         { image: graphic11Image },
+        { image: graphic13Image },
+        { image: graphic12Image },
         { image: graphic1Image },
+        { image: graphic14Image },
         { image: previewImage },
         { image: graphic2Image },
         { image: graphic3Image },
