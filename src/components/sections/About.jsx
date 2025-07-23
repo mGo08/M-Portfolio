@@ -35,7 +35,7 @@ const RevealOnScroll = ({ children, delay = 0 }) => {
     );
 };
 
-const softwares = ["Figma", "Canva", "Adobe Photoshop", "Adobe Illustrator"];
+const softwares = ["Figma", "Canva", "Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign", "Adobe XD", "Affinity Designer" ];
 const webSkills = [
     "HTML", "CSS", "JavaScript", "React JS", "Node JS",
     "Express.js", "MySQL", "MongoDB", "Git", "NPM"
