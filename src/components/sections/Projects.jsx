@@ -120,7 +120,7 @@ export const Projects = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="text-5xl md:text-6xl font-bold mb-12 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent text-center tracking-tight"
+                        className="text-5xl md:text-6xl font-bold mt-12 mb-12 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent text-center tracking-tight"
                     >
                         Featured Projects
                     </motion.h2>
