@@ -1,42 +1,47 @@
 import { useEffect, useState } from "react";
 
 export const LoadingScreen = ({ onComplete }) => {
-    const [textVisible, setTextVisible] = useState(false);
-    const [loadingBarVisible, setLoadingBarVisible] = useState(false);
-    const [loadingBarExpanded, setLoadingBarExpanded] = useState(false);
+    const [showText, setShowText] = useState(false);
     const [fadeOut, setFadeOut] = useState(false);
-    const [barFadeOut, setBarFadeOut] = useState(false);
 
     useEffect(() => {
         const timers = [
-            setTimeout(() => setTextVisible(true), 1000),
-            setTimeout(() => setLoadingBarVisible(true), 1000),
-            setTimeout(() => setLoadingBarExpanded(true), 1700),
-            setTimeout(() => setFadeOut(true), 3500),
-            setTimeout(() => setBarFadeOut(true), 3500),
-            setTimeout(() => onComplete(), 4500),
+            setTimeout(() => setShowText(true), 400),      // Show text
+            setTimeout(() => setFadeOut(true), 2500),      // Start fade out (background only)
+            setTimeout(() => onComplete(), 3100),          // Complete
         ];
 
         return () => timers.forEach(clearTimeout);
     }, [onComplete]);
 
     return (
-        <div className="fixed inset-0 z-50 bg-gray-900 text-white flex flex-col items-center justify-center">
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+            {/* Background only fades */}
             <div
-                className={`mb-4 text-2xl font-roboto font-bold transition-all duration-1000 
-                    ${textVisible ? "animate-text-fade-shrink" : "opacity-0 scale-125"} 
-                    ${fadeOut ? "animate-text-fade-out" : ""}`}
-            >
-                M A R D E L I T O
-            </div>
+                className={`absolute inset-0 bg-black transition-opacity duration-700 ${
+                    fadeOut ? "opacity-0" : "opacity-100"
+                }`}
+            ></div>
+
+            {/* Text stays solid */}
             <div
-                className={`w-[300px] h-[2px] bg-gray-800 rounded relative overflow-hidden transition-all duration-1000 
-                    ${loadingBarVisible && !barFadeOut ? "opacity-100" : "opacity-0"}`}
+                className={`relative flex items-center justify-center px-4 transition-all duration-800 ease-out ${
+                    showText ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                }`}
             >
-                <div
-                    className={`h-full bg-white shadow-[0_0_15px_#3b82f6] transition-all duration-2000 
-                        ${loadingBarExpanded ? "w-full" : "w-0"}`}
-                ></div>
+                <h1
+                    className="font-[Margaret] font-light leading-none text-center text-white animate-color-sweep
+                               text-7xl 
+                               sm:text-7xl 
+                               md:text-7xl 
+                               lg:text-8xl 
+                               xl:text-[10rem]
+                               2xl:text-[12rem]
+                               max-w-full relative"
+                >
+                    <span className="block sm:inline">Intelligent</span>
+                    <span className="block sm:inline"> by Design</span>
+                </h1>
             </div>
         </div>
     );

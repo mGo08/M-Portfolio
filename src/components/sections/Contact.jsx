@@ -1,119 +1,117 @@
-import {useState} from "react";
-import {RevealOnScroll} from "../RevealOnScroll";
-import emailjs from "emailjs-com";
-import {FaGithub, FaLinkedin, FaEnvelope} from "react-icons/fa";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { RevealOnScroll } from "../RevealOnScroll";
+
+// Mock emailjs for demonstration
+const emailjs = {
+  sendForm: (serviceId, templateId, target, publicKey) => {
+    return new Promise((resolve) => {
+      setTimeout(() => resolve(), 1000);
+    });
+  }
+};
 
 export const Contact = () => {
-    const [formData, setFormData] = useState({name: "", email: "", message: ""});
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
 
-        emailjs
-            .sendForm(
-                import.meta.env.VITE_SERVICE_ID,
-                import.meta.env.VITE_TEMPLATE_ID,
-                e.target,
-                import.meta.env.VITE_PUBLIC_KEY
-            )
-            .then((result) => {
-                alert("Message Sent!");
-                setFormData({name: "", email: "", message: ""});
-            })
-            .catch(() => alert("Oops! Something went wrong. Please try again."));
-    };
+    try {
+      await emailjs.sendForm(
+        "your_service_id",
+        "your_template_id",
+        e.target,
+        "your_public_key"
+      );
+      alert("Message Sent!");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      alert("Oops! Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
-    return (
-        <section
-            id="contact"
-            className="min-h-screen flex items-center justify-center py-20 font-roboto bg-gradient-to-t from-slate-50 via-slate-200 to-slate-300">
-            <RevealOnScroll>
-                <div className="flex flex-col items-left justify-left px-4 w-full max-w-2xl">
-                    <h2 className="text-6xl font-semibold mb-8 text-left text-[#363636]">
-                        contact me.
-                    </h2>
-                    <form className="space-y-6 w-full" onSubmit={handleSubmit}>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                required="required"
-                                value={formData.name}
-                                className="text-sm w-full bg-transparent border-2 border-gray-600 rounded px-6 py-4 text-[#363636] placeholder-gray-700 focus:outline-none focus:ring-2 focus:ring-[#6C7A89]"
-                                placeholder="Name"
-                                onChange={(e) => setFormData({
-                                    ...formData,
-                                    name: e.target.value
-                                })
-}/>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                required="required"
-                                value={formData.email}
-                                className="text-sm w-full bg-transparent border-2 border-gray-600 rounded px-6 py-4 text-[#363636] placeholder-gray-700 focus:outline-none focus:ring-2 focus:ring-[#6C7A89]"
-                                placeholder="Email"
-                                onChange={(e) => setFormData({
-                                    ...formData,
-                                    email: e.target.value
-                                })
-}/>
-                        </div>
-                        <textarea
-                            id="message"
-                            name="message"
-                            required="required"
-                            rows={5}
-                            value={formData.message}
-                            className="text-sm w-full bg-transparent border-2 border-gray-600 border-gray-600 rounded px-6 py-4 text-[#363636] placeholder-gray-700 focus:outline-none focus:ring-2 focus:ring-[#6C7A89]"
-                            placeholder="Leave feedback about the site, career opportunities, or just to say hello, etc."
-                            onChange={(e) => setFormData({
-                                ...formData,
-                                message: e.target.value
-                            })
-}/>
-                        <button
-                            type="submit"
-                            className="w-full bg-[#363636] text-white py-4 px-8 rounded font-semibold transition-all hover:bg-[#363636]/80 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#ECDFCC]">
-                            Send Message
-                        </button>
-                    </form>
-                    <p className="mt-4 text-sm text-[#363636] text-center">
-                        By submitting this form, I agree to the{" "}
-                        <a href="#" className="underline">
-                            privacy policy
-                        </a>
-                        .
-                    </p>
+  return (
+    <section
+      id="contact"
+      className="min-h-screen bg-black text-white font-roboto flex flex-col justify-between"
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
+        {/* Header Section */}
+        <RevealOnScroll>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="space-y-12 lg:space-y-16"
+          >
+            {/* Intro */}
+            <div className="space-y-4">
+              <span className="font-[popLight] tracking-[0.05em] text-sm font-medium text-gray-400 uppercase">
+                Get In Touch
+              </span>
 
-                    <div className="flex justify-center gap-5 mt-10">
-                        <a
-                            href="https://github.com/mGo08"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-[#363636] hover:text-[#363636]/80 transition">
-                            <FaGithub size={20}/>
-                        </a>
-                        <a
-                            href="https://www.linkedin.com/in/mardelito-t-go-890181350/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-[#363636] hover:text-[#363636]/80 transition">
-                            <FaLinkedin size={20}/>
-                        </a>
-                        <a
-                            href="mailto:mgo.dev08@gmail.com"
-                            className="text-[#363636] hover:text-[#363636]/80 transition">
-                            <FaEnvelope size={20}/>
-                        </a>
+              <motion.h1
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+                className="font-[Margaret] text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[10rem] font-extralight
+                 leading-tight mt-15"
+              >
+                CONCEPT TO CREATION
+              </motion.h1>
+            </div>
+
+            {/* Content Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+              {/* Left Column - Info */}
+              <div className="lg:col-span-6 space-y-8">
+                <p className="font-[popLight] text-md lg:text-md text-gray-500 leading-relaxed tracking-[0.05em] text-justify">
+                  I'm always interested in new opportunities, collaborations, and 
+                  creative projects. Whether you have a project in mind or just want 
+                  to connect, I'd love to hear from you.
+                </p>
+
+                {/* Quick Contact Info */}
+                <div className="space-y-5">
+                  {[
+                    { label: "Email", value: "mgo.dev08@gmail.com", href: "mailto:mgo.dev08@gmail.com" },
+                    { label: "GitHub", value: "@mGo08", href: "https://github.com/mGo08" },
+                    { label: "LinkedIn", value: "Mardelito T. Go", href: "https://www.linkedin.com/in/mardelito-t-go-890181350/" }
+                  ].map((item, i) => (
+                    <div key={i} className="flex flex-col sm:flex-row sm:items-center sm:gap-4">
+                      <span className="font-[popLight] tracking-[0.05em] text-sm font-bold text-gray-500 uppercase w-20">
+                        {item.label}
+                      </span>
+                      <a 
+                        href={item.href}
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className=" font-[popLight] tracking-[0.05em]s text-white hover:text-gray-300 transition-colors duration-300"
+                      >
+                        {item.value}
+                      </a>
                     </div>
-                    <div className="mt-6 text-[#363636] text-sm text-center">
-                        &copy; Mardelito T. Go 2025
-                    </div>
+                  ))}
                 </div>
-            </RevealOnScroll>
-        </section>
-    );
+              </div>
+            </div>
+          </motion.div>
+        </RevealOnScroll>
+      </div>
+
+      {/* Footer */}
+      <footer className="border-t border-white/10 py-8">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-center items-center gap-6">
+          <p className="text-white/60 text-sm">
+            © {new Date().getFullYear()} Mardelito T. Go. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </section>
+  );
 };

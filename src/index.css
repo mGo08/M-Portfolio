@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 html, body {
   margin: 0;
   padding: 0;
@@ -8,65 +7,67 @@ html, body {
   color: white;
 }
 
+/* Utilities */
 @layer utilities {
-  @keyframes text-fade-shrink {
+  .popLight {
+    transition: all 0.25s ease;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .popLight:hover {
+    color: #ffffff;
+    letter-spacing: 0.05em; /* subtle spacing effect */
+    transform: translateY(-1px); /* tiny lift */
+  }
+
+  @keyframes colorSweep {
+    0% {
+      background-position: 0% 0;   /* Start with gray visible */
+    }
+    100% {
+      background-position: -100% 0; /* Sweep to reveal white */
+    }
+  }
+  
+  .animate-color-sweep {
+    background: linear-gradient(
+      90deg,
+      #6b7280 0%,   /* gray */
+      #6b7280 50%,  /* gray halfway */
+      #ffffff 50%,  /* then white */
+      #ffffff 100%  /* white */
+    );
+    background-size: 200% 100%;
+    background-position: 0% 0;    /* Start with gray showing */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: colorSweep 2.5s ease-out forwards;
+    animation-delay: 0.8s;
+  }
+
+  /* Enhanced reveal on scroll animation */
+  @keyframes revealOnScroll {
     0% {
       opacity: 0;
-      transform: scale(1.25);
+      transform: translateY(40px);
     }
     100% {
       opacity: 1;
-      transform: scale(1);
+      transform: translateY(0);
     }
   }
 
-  .animate-text-fade-shrink {
-    animation: text-fade-shrink 1s ease-in-out forwards;
-  }
-
-  @keyframes text-fade-out {
-    0% {
-      opacity: 1;
-      transform: scale(1);
-    }
-    100% {
-      opacity: 0;
-      transform: scale(0.8);
-    }
-  }
-
-  .animate-text-fade-out {
-    animation: text-fade-out 1s ease-in-out forwards;
-  }
-
-  @keyframes loading-bar-fade {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes loading-bar-fade-out {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-
-  .animate-loading-bar-fade {
-    animation: loading-bar-fade 1s ease-in-out forwards;
-  }
-
-  .animate-loading-bar-fade-out {
-    animation: loading-bar-fade-out 1s ease-in-out forwards;
+  .animate-reveal-on-scroll {
+    animation: revealOnScroll 0.8s ease-out forwards;
+    animation-delay: 4.8s; /* Start after text glow finishes */
+    /* Start hidden */
+    opacity: 0;
+    transform: translateY(40px);
   }
 }
 
-
+/* Reveal on scroll */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -78,9 +79,40 @@ html, body {
   transform: translateY(0);
 }
 
-@theme {
-  --font-inter: 'Inter';
-  --font-nokora: 'Nokora';
-  --font-roboto: 'Roboto';
+.custom-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
 }
 
+/* Default arrow (small white circle) */
+.cursor-default {
+  width: 25px;
+  height: 25px;
+  opacity: 1;
+  mix-blend-mode: difference;
+}
+
+/* Hover circle with invert/negative effect */
+.cursor-circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0.001; /* Very small but not zero */
+  mix-blend-mode: difference;
+  pointer-events: none;
+}
+
+/* Hover arrow also inverted */
+.cursor-arrow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0.001; /* Very small but not zero */
+  mix-blend-mode: difference;
+  pointer-events: none;
+}

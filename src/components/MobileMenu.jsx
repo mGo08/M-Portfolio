@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
 export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
@@ -14,28 +14,27 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
         }
     };
 
-    // Simplified animation variants for better performance
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: { 
             opacity: 1,
             transition: { 
                 duration: 0.3,
-                staggerChildren: 0.08
+                staggerChildren: 0.1
             }
         },
         exit: { 
             opacity: 0,
-            transition: { duration: 0.2 }
+            transition: { duration: 0.25 }
         }
     };
 
     const itemVariants = {
-        hidden: { opacity: 0, y: 20 },
+        hidden: { opacity: 0, y: 30 },
         visible: { 
             opacity: 1, 
             y: 0,
-            transition: { duration: 0.3, ease: "easeOut" }
+            transition: { duration: 0.4, ease: "easeOut" }
         }
     };
 
@@ -48,29 +47,27 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
                     animate="visible"
                     exit="exit"
                     className="fixed inset-0 z-50 flex flex-col items-center justify-center font-roboto"
-                    style={{ willChange: 'opacity' }}
                 >
-                    {/* Simplified background - removed heavy blur effects */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-gray-900 to-black">
-                        {/* Reduced background effects */}
-                        <div className="absolute top-1/4 -left-32 w-64 h-64 bg-purple-500/10 rounded-full blur-2xl opacity-50"></div>
-                        <div className="absolute bottom-1/4 -right-32 w-64 h-64 bg-blue-500/10 rounded-full blur-2xl opacity-50"></div>
-                    </div>
+                    {/* Minimal dark background */}
+                    <div className="absolute inset-0 bg-[#0d0d0d]/95"></div>
 
-                    {/* Close button - simplified animation */}
+                    {/* Close button */}
                     <motion.button
                         onClick={() => setMenuOpen(false)}
-                        className="absolute top-8 right-8 w-12 h-12 flex items-center justify-center bg-white/10 border border-white/20 rounded-full text-white hover:bg-white/20 focus:outline-none cursor-pointer transition-colors duration-200"
+                        className="absolute top-8 right-8 w-10 h-10 flex items-center justify-center text-white/60 hover:text-white focus:outline-none transition-colors duration-200"
                         aria-label="Close Menu"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
                         variants={itemVariants}
                     >
-                        <span className="text-2xl font-light">&times;</span>
+                        <div className="relative w-6 h-6">
+                            <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-45 w-6 h-[1px] bg-current"></span>
+                            <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -rotate-45 w-6 h-[1px] bg-current"></span>
+                        </div>
                     </motion.button>
 
-                    {/* Navigation items - simplified animations */}
-                    <div className="flex flex-col items-center space-y-6 relative z-10">
+                    {/* Navigation items */}
+                    <div className="flex flex-col items-center space-y-8 relative z-10">
                         {[
                             { id: "home", label: "HOME" },
                             { id: "about", label: "ABOUT" },
@@ -84,66 +81,62 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
                                 variants={itemVariants}
                                 whileHover={{ 
                                     scale: 1.02,
-                                    transition: { duration: 0.15 }
+                                    transition: { duration: 0.2 }
                                 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="group relative text-5xl md:text-6xl font-bold uppercase cursor-pointer tracking-wider"
-                                style={{ willChange: 'transform' }}
+                                className="group relative text-4xl md:text-5xl font-light uppercase cursor-pointer tracking-[0.1em] text-white/80 hover:text-white transition-colors duration-300"
                             >
-                                {/* Simplified text styling */}
-                                <span className="text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-blue-400 group-hover:bg-clip-text transition-all duration-300">
-                                    {item.label}
-                                </span>
+                                {item.label}
                                 
-                                {/* Simple underline animation */}
-                                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-purple-500 to-blue-500 group-hover:w-full transition-all duration-300 ease-out"></div>
+                                {/* Minimal underline */}
+                                <div className="absolute bottom-[-4px] left-1/2 transform -translate-x-1/2 w-0 h-[1px] bg-white group-hover:w-full transition-all duration-400 ease-out"></div>
                             </motion.a>
                         ))}
                     </div>
 
-                    {/* Social media icons - simplified */}
+                    {/* Social media icons */}
                     <motion.div
                         variants={itemVariants}
-                        className="absolute bottom-24 flex space-x-8"
+                        className="absolute bottom-20 flex space-x-6"
                     >
                         {[
-                            { href: "https://github.com/mGo08", icon: FaGithub },
-                            { href: "https://www.linkedin.com/in/mardelito-t-go-890181350/", icon: FaLinkedin }
+                            { href: "https://github.com/mGo08", icon: FaGithub, label: "GitHub" },
+                            { href: "https://www.linkedin.com/in/mardelito-t-go-890181350/", icon: FaLinkedin, label: "LinkedIn" }
                         ].map((social, index) => (
                             <motion.a
                                 key={index}
                                 href={social.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-14 h-14 flex items-center justify-center bg-white/10 border border-white/20 rounded-2xl hover:bg-white/20 transition-colors duration-200"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                style={{ willChange: 'transform' }}
+                                className="w-12 h-12 flex items-center justify-center border border-white/20 rounded-full text-white/60 hover:text-white hover:border-white/40 transition-all duration-300"
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.9 }}
+                                aria-label={social.label}
                             >
-                                <social.icon className="text-2xl text-white hover:text-purple-400 transition-colors duration-200" />
+                                <social.icon className="text-lg" />
                             </motion.a>
                         ))}
                     </motion.div>
 
-                    {/* Copyright - simplified */}
+                    {/* Copyright */}
                     <motion.div
                         variants={itemVariants}
-                        className="absolute bottom-8 text-center"
+                        className="absolute bottom-6 text-center"
                     >
-                        <div className="text-gray-400 text-sm tracking-wider">
-                            &copy; Mardelito T. Go 2025
+                        <div className="text-white/40 text-xs font-light tracking-wider uppercase">
+                            &copy; 2025 Mardelito T. Go
                         </div>
                     </motion.div>
 
-                    {/* Minimal decorative elements */}
+                    {/* Minimal accent lines */}
                     <motion.div
                         variants={itemVariants}
-                        className="absolute top-20 left-8 w-1 h-12 bg-gradient-to-b from-purple-500 to-transparent"
+                        className="absolute top-16 left-8 w-8 h-[1px] bg-white/20"
                     ></motion.div>
                     
                     <motion.div
                         variants={itemVariants}
-                        className="absolute bottom-32 right-8 w-1 h-12 bg-gradient-to-t from-blue-500 to-transparent"
+                        className="absolute bottom-16 right-8 w-8 h-[1px] bg-white/20"
                     ></motion.div>
                 </motion.div>
             )}

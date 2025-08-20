@@ -1,0 +1,41 @@
+  @font-face {
+    font-family: 'Margaret';
+    src: url('/fonts/MargarethRosinante-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'popReg';
+    src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'popExtraLight';
+    src: url('/fonts/Poppins-ExtraLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'popLight';
+    src: url('/fonts/Poppins-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'popMed';
+    src: url('/fonts/Poppins-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'popBold';
+    src: url('/fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
