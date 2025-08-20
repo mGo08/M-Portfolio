@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
-import { usePreloadImages } from "../usePreloadImages";
+import { usePreloadImages } from "../usePreLoadImages.js";
 
 const works = [
   { image: "/merch.png", hoverImage: "/Design.png", title: "Design Illustration", desc: "APPAREL DESIGN" },
