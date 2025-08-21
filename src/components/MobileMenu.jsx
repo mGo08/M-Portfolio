@@ -1,41 +1,73 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLocation, useNavigate } from "react-router-dom";
 
-export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
-    const handleSmoothScroll = (event, section) => {
+export const MobileMenu = ({ menuOpen, setMenuOpen, onPageTransition }) => {
+    const location = useLocation();
+    const navigate = useNavigate();
+    const isAboutPage = location.pathname === "/about";
+    const isContactPage = location.pathname === "/contact";
+    const isWorkPage = location.pathname === "/work";
+
+    // Smooth scroll for homepage sections
+    const handleSmoothScroll = async (event, section) => {
         event.preventDefault();
-        const targetSection = document.getElementById(section);
-        if (targetSection) {
-            targetSection.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-            });
-            setMenuOpen(false);
+        if (location.pathname !== "/") {
+            if (onPageTransition) await onPageTransition();
+            navigate("/");
+            setTimeout(() => {
+                if (section === "home") window.scrollTo({ top: 0, behavior: "smooth" });
+                else {
+                    const target = document.getElementById(section);
+                    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+            }, 100);
+        } else {
+            if (section === "home") window.scrollTo({ top: 0, behavior: "smooth" });
+            else {
+                const target = document.getElementById(section);
+                if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
         }
+        setMenuOpen(false);
+    };
+
+    // Navigate to WORK page
+    const handleWorkNavigation = async (e) => {
+        e.preventDefault();
+        if (location.pathname === "/work") return;
+        if (onPageTransition) await onPageTransition();
+        navigate("/work");
+        setMenuOpen(false);
+    };
+
+    // Navigate to ABOUT page
+    const handleAboutNavigation = async (e) => {
+        e.preventDefault();
+        if (location.pathname === "/about") return;
+        if (onPageTransition) await onPageTransition();
+        navigate("/about");
+        setMenuOpen(false);
+    };
+
+    // Navigate to CONTACT page
+    const handleContactNavigation = async (e) => {
+        e.preventDefault();
+        if (location.pathname === "/contact") return;
+        if (onPageTransition) await onPageTransition();
+        navigate("/contact");
+        setMenuOpen(false);
     };
 
     const containerVariants = {
         hidden: { opacity: 0 },
-        visible: { 
-            opacity: 1,
-            transition: { 
-                duration: 0.3,
-                staggerChildren: 0.1
-            }
-        },
-        exit: { 
-            opacity: 0,
-            transition: { duration: 0.25 }
-        }
+        visible: { opacity: 1, transition: { duration: 0.3, staggerChildren: 0.1 } },
+        exit: { opacity: 0, transition: { duration: 0.25 } }
     };
 
     const itemVariants = {
         hidden: { opacity: 0, y: 30 },
-        visible: { 
-            opacity: 1, 
-            y: 0,
-            transition: { duration: 0.4, ease: "easeOut" }
-        }
+        visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
     };
 
     return (
@@ -46,55 +78,77 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
                     initial="hidden"
                     animate="visible"
                     exit="exit"
-                    className="fixed inset-0 z-50 flex flex-col items-center justify-center font-roboto"
+                    className="fixed inset-0 z-50 flex flex-col items-center justify-center font-[popLight]"
                 >
-                    {/* Minimal dark background */}
-                    <div className="absolute inset-0 bg-[#0d0d0d]/95"></div>
+                    {/* Dark background */}
+                    <div className="absolute inset-0 bg-black/95"></div>
 
                     {/* Close button */}
                     <motion.button
                         onClick={() => setMenuOpen(false)}
-                        className="absolute top-8 right-8 w-10 h-10 flex items-center justify-center text-white/60 hover:text-white focus:outline-none transition-colors duration-200"
+                        className="absolute top-8 right-8 w-10 h-10 flex items-center border border-white/40 rounded-full justify-center text-white/60 hover:text-white focus:outline-none transition-colors duration-200 font-[popLight]"
                         aria-label="Close Menu"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         variants={itemVariants}
                     >
-                        <div className="relative w-6 h-6">
-                            <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-45 w-6 h-[1px] bg-current"></span>
-                            <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -rotate-45 w-6 h-[1px] bg-current"></span>
-                        </div>
+                        <span className="text-xl">X</span>
                     </motion.button>
 
                     {/* Navigation items */}
                     <div className="flex flex-col items-center space-y-8 relative z-10">
-                        {[
-                            { id: "home", label: "HOME" },
-                            { id: "about", label: "ABOUT" },
-                            { id: "projects", label: "WORK" },
-                            { id: "contact", label: "CONTACT" }
-                        ].map((item, index) => (
-                            <motion.a
-                                key={index}
-                                href={`#${item.id}`}
-                                onClick={(e) => handleSmoothScroll(e, item.id)}
-                                variants={itemVariants}
-                                whileHover={{ 
-                                    scale: 1.02,
-                                    transition: { duration: 0.2 }
-                                }}
-                                whileTap={{ scale: 0.98 }}
-                                className="group relative text-4xl md:text-5xl font-light uppercase cursor-pointer tracking-[0.1em] text-white/80 hover:text-white transition-colors duration-300"
-                            >
-                                {item.label}
-                                
-                                {/* Minimal underline */}
-                                <div className="absolute bottom-[-4px] left-1/2 transform -translate-x-1/2 w-0 h-[1px] bg-white group-hover:w-full transition-all duration-400 ease-out"></div>
-                            </motion.a>
-                        ))}
+                        <motion.a
+                            href="/"
+                            onClick={(e) => handleSmoothScroll(e, "home")}
+                            variants={itemVariants}
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            className="group relative text-4xl md:text-5xl uppercase cursor-pointer tracking-[0.1em] text-white/80 hover:text-white transition-colors duration-300 font-[popExtraLight]"
+                        >
+                            HOME
+                        </motion.a>
+
+                        <motion.a
+                            href="/work"
+                            onClick={handleWorkNavigation}
+                            variants={itemVariants}
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            className={`group relative text-4xl md:text-5xl uppercase cursor-pointer tracking-[0.1em] transition-colors duration-300 font-[popExtraLight] ${
+                                isWorkPage ? "text-white" : "text-white/80 hover:text-white"
+                            }`}
+                        >
+                            WORK
+                        </motion.a>
+
+                        <motion.a
+                            href="/about"
+                            onClick={handleAboutNavigation}
+                            variants={itemVariants}
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            className={`group relative text-4xl md:text-5xl uppercase cursor-pointer tracking-[0.1em] transition-colors duration-300 font-[popExtraLight] ${
+                                isAboutPage ? "text-white" : "text-white/80 hover:text-white"
+                            }`}
+                        >
+                            ABOUT
+                        </motion.a>
+
+                        <motion.a
+                            href="/contact"
+                            onClick={handleContactNavigation}
+                            variants={itemVariants}
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            className={`group relative text-4xl md:text-5xl uppercase cursor-pointer tracking-[0.1em] transition-colors duration-300 font-[popExtraLight] ${
+                                isContactPage ? "text-white" : "text-white/80 hover:text-white"
+                            }`}
+                        >
+                            CONTACT
+                        </motion.a>
                     </div>
 
-                    {/* Social media icons */}
+                    {/* Social icons */}
                     <motion.div
                         variants={itemVariants}
                         className="absolute bottom-20 flex space-x-6"
@@ -121,23 +175,12 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
                     {/* Copyright */}
                     <motion.div
                         variants={itemVariants}
-                        className="absolute bottom-6 text-center"
+                        className="absolute bottom-6 text-center font-[popLight]"
                     >
-                        <div className="text-white/40 text-xs font-light tracking-wider uppercase">
+                        <div className="text-white/40 text-xs tracking-wider uppercase">
                             &copy; 2025 Mardelito T. Go
                         </div>
                     </motion.div>
-
-                    {/* Minimal accent lines */}
-                    <motion.div
-                        variants={itemVariants}
-                        className="absolute top-16 left-8 w-8 h-[1px] bg-white/20"
-                    ></motion.div>
-                    
-                    <motion.div
-                        variants={itemVariants}
-                        className="absolute bottom-16 right-8 w-8 h-[1px] bg-white/20"
-                    ></motion.div>
                 </motion.div>
             )}
         </AnimatePresence>

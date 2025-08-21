@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { usePreloadImages } from "../usePreLoadImages.js";
+import { Link } from "react-router-dom";
 
 const works = [
   { image: "/merch.png", hoverImage: "/Design.png", title: "Design Illustration", desc: "APPAREL DESIGN" },
@@ -58,14 +59,23 @@ export const Projects = () => {
             ))}
           </div>
 
+
           {/* Button */}
           <div className="flex justify-center mt-16 sm:mt-24 lg:mt-32">
+          <Link
+            to="/work"
+            onClick={() => {
+              // scroll top after navigation
+              setTimeout(() => window.scrollTo(0, 0), 0);
+            }}
+          >
             <motion.button
               whileHover={{ scale: 1.1 }}
               className="px-6 sm:px-10 lg:px-15 py-3 sm:py-4 lg:py-5 border-2 border-white rounded-lg text-base sm:text-xl lg:text-2xl text-white font-[Margaret] hover:bg-white hover:text-black transition"
             >
               see more of my work
             </motion.button>
+          </Link>
           </div>
         </div>
       </RevealOnScroll>

@@ -50,14 +50,14 @@ export const About = () => {
     <section id="about" className="min-h-screen bg-black relative overflow-hidden">
       {/* Fixed Hero */}
       <motion.div
-        className="fixed inset-0 flex flex-col justify-center items-center px-6 w-full mx-auto z-10 space-y-10"
+        className="fixed inset-0 flex flex-col justify-center items-center px-6 w-full mx-auto z-10 space-y-20"
         style={{ opacity: heroOpacity, transform: `translateY(${heroTranslateY}px)` }}
       >
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-          className="font-[Margaret] tracking-normal text-center text-[2rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[5rem] 2xl:text-[7rem] font-normal leading-tight w-full text-white"
+          className="font-[Margaret] tracking-normal text-center text-[2rem] sm:text-[3rem] md:text-[3rem] lg:text-[3rem] 2xl:text-[5rem] font-normal leading-tight w-full text-white"
         >
           I'm Mardelito Go the person <br /> you're looking for.
         </motion.h1>

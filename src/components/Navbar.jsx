@@ -8,6 +8,7 @@ export const Navbar = ({ menuOpen, setMenuOpen, onPageTransition }) => {
   const navigate = useNavigate();
   const isAboutPage = location.pathname === "/about";
   const isContactPage = location.pathname === "/contact";
+  const isWorkPage = location.pathname === "/work";
 
   // Disable body scroll when menu is open
   useEffect(() => {
@@ -81,43 +82,63 @@ export const Navbar = ({ menuOpen, setMenuOpen, onPageTransition }) => {
     setMenuOpen(false);
   };
 
+  // Navigate to WORK page
+  const handleWorkNavigation = async (e) => {
+    e.preventDefault();
+    if (location.pathname === "/work") return;
+    if (onPageTransition) await onPageTransition();
+    navigate("/work");
+    setMenuOpen(false);
+  };
+
   return (
     <>
-      {/* Desktop Navbar */}
-      <motion.nav
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="hidden md:flex fixed top-6 left-0 w-full items-center justify-between px-100 z-40"
+{/* Desktop Navbar */}
+<motion.nav
+  initial={{ opacity: 0, y: -20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  className="hidden md:flex fixed top-6 left-0 w-full z-40"
+>
+  <div className="flex w-full items-center justify-between px-[25%]">
+    {/* Left: Name */}
+    <a
+      href="/"
+      className="font-[popReg] font-light tracking-widest popLight"
+    >
+      MARDELITO GO
+    </a>
+
+    {/* Center: Links */}
+    <div className="flex space-x-10 text-md tracking-widest text-white">
+      <a
+        href="/work"
+        onClick={handleWorkNavigation}
+        className={`popLight ${isWorkPage ? "text-white" : ""}`}
       >
-        <a href="/" className="font-[popReg] text-white font-light tracking-widest popLight">
-          MARDELITO GO
-        </a>
-        <div className="font-[popReg] flex space-x-10 text-white text-md tracking-widest">
-          <a
-            href="/work"
-            onClick={(e) => handleSmoothScroll(e, "work")}
-            className={`popLight ${location.pathname === "/" && activeSection === "work" ? "text-white" : ""}`}
-          >
-            WORK
-          </a>
-          <a
-            href="/about"
-            onClick={handleAboutNavigation}
-            className={`popLight ${isAboutPage ? "text-white" : ""}`}
-          >
-            ABOUT
-          </a>
-          <a
-            href="/contact"
-            onClick={handleContactNavigation}
-            className={`popLight ${isContactPage ? "text-white" : ""}`}
-          >
-            CONTACT
-          </a>
-        </div>
-        <div className="text-white text-sm">©2025</div>
-      </motion.nav>
+        WORK
+      </a>
+      <a
+        href="/about"
+        onClick={handleAboutNavigation}
+        className={`popLight ${isAboutPage ? "text-white" : ""}`}
+      >
+        ABOUT
+      </a>
+      <a
+        href="/contact"
+        onClick={handleContactNavigation}
+        className={`popLight ${isContactPage ? "text-white" : ""}`}
+      >
+        CONTACT
+      </a>
+    </div>
+
+    {/* Right: Copyright */}
+    <div className="text-sm">©2025</div>
+  </div>
+</motion.nav>
+
 
       {/* Mobile Menu Button */}
       <motion.div

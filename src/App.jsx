@@ -9,12 +9,14 @@ import { Home } from "./components/sections/Home";
 import { About } from "./components/sections/About";
 import { Projects } from "./components/sections/Projects";
 import { Contact } from "./components/sections/Contact";
+import { WorkPage } from "./components/sections/WorkPage.jsx";
 import { PageTransition } from "./components/PageTransition";
 import "@fontsource/roboto";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/400-italic.css";
 import "./index.css";
 import CustomCursor from "./components/CustomCursor";
+import useIsMobile from "./components/useIsMobile";
 
 // Optional: set body background to prevent flashes
 document.body.style.backgroundColor = "black"; // match your site bg
@@ -33,6 +35,16 @@ const AnimatedRoutes = ({ menuOpen, setMenuOpen }) => {
         <Route
           path="/"
           element={<MainPage menuOpen={menuOpen} setMenuOpen={setMenuOpen} />}
+        />
+
+        {/* WORK */}
+        <Route
+          path="/work"
+          element={
+            <PageTransition>
+              <WorkFullPage menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+            </PageTransition>
+          }
         />
 
         {/* ABOUT */}
@@ -70,6 +82,14 @@ const MainPage = ({ menuOpen, setMenuOpen }) => (
   </>
 );
 
+const WorkFullPage = ({ menuOpen, setMenuOpen }) => (
+  <>
+    <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+    <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+    <WorkPage />
+  </>
+);
+
 // About page
 const AboutPage = ({ menuOpen, setMenuOpen }) => (
   <>
@@ -92,6 +112,7 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
+  const isMobile = useIsMobile(); 
   const handleLoadingComplete = () => setIsLoading(false);
 
   return (
@@ -100,8 +121,8 @@ function App() {
         <LoadingScreen onComplete={handleLoadingComplete} />
       ) : (
         <Router>
-          <CustomCursor />
-          {/* Persistent background wrapper to prevent white flash */}
+          {!isMobile && <CustomCursor />}
+          
           <div className="min-h-screen bg-black">
             <AnimatedRoutes menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
           </div>
