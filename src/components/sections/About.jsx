@@ -110,7 +110,7 @@ export const About = () => {
                       <p className="text-white">Video Editing</p>
                       <p className="text-white">Workflow Automation</p>
                       <p className="text-white">Interaction Design</p>
-                      <p className="text-white">UX/UI Design</p>
+                      <p className="text-white">UI/UX Design</p>
                     </div>
                   </div>
                 </RevealParallax>
@@ -124,11 +124,9 @@ export const About = () => {
                       <p className="text-white">Bout It Merch</p>
                       <p className="text-white">KLUBB88</p>
                       <p className="text-white">Function PDX</p>
-                      <p className="text-white">Bitnob</p>
-                      <p className="text-white">GDG Devfest</p>
+                      <p className="text-white">Noctura</p>
                       <p className="text-white">Meta Developer Circles</p>
-                      <p className="text-white">Qasah</p>
-                      <p className="text-white">Joint Labs</p>
+                      <p className="text-white">UX Philippines</p>
                     </div>
                   </div>
                 </RevealParallax>
