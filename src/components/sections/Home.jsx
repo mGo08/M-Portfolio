@@ -14,9 +14,9 @@ export const Home = () => {
                                text-7xl 
                                sm:text-7xl 
                                md:text-7xl 
-                               lg:text-8xl 
-                               xl:text-[10rem] 
-                               2xl:text-[12rem]
+                               lg:text-7xl 
+                               xl:text-[7rem] 
+                               2xl:text-[9rem]
                                max-w-full relative"
                 >
                     <span className="block sm:inline">Intelligent</span>
@@ -31,11 +31,11 @@ export const Home = () => {
                 transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
                 className="absolute bottom-6 sm:bottom-8 md:bottom-10 left-1/2 transform -translate-x-1/2 
                            max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-3xl px-4 mx-auto 
-                           font-[popLight] tracking-[0.05em] text-gray-500 text-center 
+                           font-[popLight] tracking-normal text-white/50 text-center 
                            text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 
-                           leading-relaxed"
+                           leading-normal"
             >
-                A CREATIVE DESIGNER FROM THE PHILIPPINES WEAVING TECH & DESIGN TO CREATE SOLUTIONS.
+                A CREATIVE DESIGNER FROM THE PHILIPPINES <br/> WEAVING TECH & DESIGN TO CREATE SOLUTIONS.
             </motion.p>
         </section>
     );

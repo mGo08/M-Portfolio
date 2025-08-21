@@ -66,7 +66,7 @@ export const About = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
-          className="font-[poplight] text-gray-500 text-sm uppercase tracking-[0.4em] animate-bounce"
+          className="font-[poplight] text-white/50 text-sm uppercase tracking-[0.4em] animate-bounce"
         >
           Scroll Down
         </motion.p>
@@ -84,7 +84,7 @@ export const About = () => {
             {/* LEFT SIDE */}
             <div className="flex flex-col space-y-28">
               <div>
-                <p className="text-gray-400 text-lg leading-loose text-justify">
+                <p className="text-white/50 text-lg leading-loose text-justify">
                   With a focus on problem solving with branding and design, I
                   strive to infuse my work with a unique, emotive touch,
                   intertwining my varied cultural roots with an astute
@@ -99,16 +99,16 @@ export const About = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
                 <RevealParallax delay={400}>
                   <div className="space-y-10">
-                    <h3 className="font-[popMed] text-gray-400 text-sm font-medium tracking-wide uppercase">
+                    <h3 className="font-[popMed] text-white/50 text-sm font-medium tracking-wide uppercase">
                       Skillset
                     </h3>
                     <div className="space-y-3 font-[popLight]">
                       <p className="text-white">Graphic + Motion Design</p>
                       <p className="text-white">Branding</p>
                       <p className="text-white">Art Direction</p>
-                      <p className="text-white">No-Code Frontend</p>
-                      <p className="text-white">Writing</p>
-                      <p className="text-white">Photo + Videography</p>
+                      <p className="text-white">Frontend Developer</p>
+                      <p className="text-white">Video Editing</p>
+                      <p className="text-white">Workflow Automation</p>
                       <p className="text-white">Interaction Design</p>
                       <p className="text-white">UX/UI Design</p>
                     </div>
@@ -117,13 +117,13 @@ export const About = () => {
 
                 <RevealParallax delay={600}>
                   <div className="space-y-10">
-                    <h3 className="font-[popMed] text-gray-400 text-sm font-medium tracking-wide uppercase">
+                    <h3 className="font-[popMed] text-white/50 text-sm font-medium tracking-wide uppercase">
                       Employers / Volunteering
                     </h3>
                     <div className="space-y-3 font-[popLight]">
                       <p className="text-white">Bout It Merch</p>
                       <p className="text-white">KLUBB88</p>
-                      <p className="text-white">FMDO Group</p>
+                      <p className="text-white">Function PDX</p>
                       <p className="text-white">Bitnob</p>
                       <p className="text-white">GDG Devfest</p>
                       <p className="text-white">Meta Developer Circles</p>

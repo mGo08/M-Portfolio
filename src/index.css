@@ -11,11 +11,11 @@ html, body {
 @layer utilities {
   .popLight {
     transition: all 0.25s ease;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255);
   }
   
   .popLight:hover {
-    color: #ffffff;
+    color: rgba(255, 255, 255,0.7);
     letter-spacing: 0.05em; /* subtle spacing effect */
     transform: translateY(-1px); /* tiny lift */
   }

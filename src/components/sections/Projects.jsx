@@ -21,7 +21,7 @@ export const Projects = () => {
   return (
     <section id="projects" className="bg-black min-h-screen py-20 md:py-40">
       <RevealOnScroll stagger={0}> {/* no delay on reveal */}
-        <div className="max-w-8xl mx-auto px-6 sm:px-16 md:px-50 lg:px-50 xl:px-120">
+      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-3">
           {/* Heading */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -62,7 +62,7 @@ export const Projects = () => {
           <div className="flex justify-center mt-16 sm:mt-24 lg:mt-32">
             <motion.button
               whileHover={{ scale: 1.1 }}
-              className="px-6 sm:px-10 lg:px-12 py-3 sm:py-4 lg:py-5 border-2 border-white rounded-lg text-base sm:text-xl lg:text-2xl text-white font-[Margaret] hover:bg-white hover:text-black transition"
+              className="px-6 sm:px-10 lg:px-15 py-3 sm:py-4 lg:py-5 border-2 border-white rounded-lg text-base sm:text-xl lg:text-2xl text-white font-[Margaret] hover:bg-white hover:text-black transition"
             >
               see more of my work
             </motion.button>

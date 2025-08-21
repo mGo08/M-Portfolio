@@ -51,7 +51,7 @@ export const Contact = () => {
           >
             {/* Intro */}
             <div className="space-y-4">
-              <span className="font-[popLight] tracking-[0.05em] text-sm font-medium text-gray-400 uppercase">
+              <span className="font-[popLight] tracking-[0.05em] text-sm font-medium text-white/50 uppercase">
                 Get In Touch
               </span>
 
@@ -59,7 +59,7 @@ export const Contact = () => {
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-                className="font-[Margaret] text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[10rem] font-extralight
+                className="font-[Margaret] text-4xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-7xl 2xl:text-[9rem] font-extralight
                  leading-tight mt-15"
               >
                 CONCEPT TO CREATION
@@ -70,21 +70,21 @@ export const Contact = () => {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
               {/* Left Column - Info */}
               <div className="lg:col-span-6 space-y-8">
-                <p className="font-[popLight] text-md lg:text-md text-gray-500 leading-relaxed tracking-[0.05em] text-justify">
+                <p className="font-[popLight] text-md lg:text-md text-white/50 leading-relaxed tracking-normal text-justify">
                   I'm always interested in new opportunities, collaborations, and 
                   creative projects. Whether you have a project in mind or just want 
                   to connect, I'd love to hear from you.
                 </p>
 
                 {/* Quick Contact Info */}
-                <div className="space-y-5">
+                <div className="space-y-8">
                   {[
                     { label: "Email", value: "mgo.dev08@gmail.com", href: "mailto:mgo.dev08@gmail.com" },
                     { label: "GitHub", value: "@mGo08", href: "https://github.com/mGo08" },
                     { label: "LinkedIn", value: "Mardelito T. Go", href: "https://www.linkedin.com/in/mardelito-t-go-890181350/" }
                   ].map((item, i) => (
                     <div key={i} className="flex flex-col sm:flex-row sm:items-center sm:gap-4">
-                      <span className="font-[popLight] tracking-[0.05em] text-sm font-bold text-gray-500 uppercase w-20">
+                      <span className="font-[popLight] tracking-[0.05em] text-sm font-bold text-white/50 uppercase w-20">
                         {item.label}
                       </span>
                       <a 

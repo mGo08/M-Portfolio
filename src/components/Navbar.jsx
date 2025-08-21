@@ -88,12 +88,12 @@ export const Navbar = ({ menuOpen, setMenuOpen, onPageTransition }) => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="hidden md:flex fixed top-6 left-0 w-full items-center justify-between px-10 z-40"
+        className="hidden md:flex fixed top-6 left-0 w-full items-center justify-between px-100 z-40"
       >
-        <a href="/" className="text-white font-light tracking-widest popLight">
+        <a href="/" className="font-[popReg] text-white font-light tracking-widest popLight">
           MARDELITO GO
         </a>
-        <div className="font-[popMed] flex space-x-10 text-white text-lg tracking-widest">
+        <div className="font-[popReg] flex space-x-10 text-white text-md tracking-widest">
           <a
             href="/work"
             onClick={(e) => handleSmoothScroll(e, "work")}
@@ -116,7 +116,7 @@ export const Navbar = ({ menuOpen, setMenuOpen, onPageTransition }) => {
             CONTACT
           </a>
         </div>
-        <div className="text-white/70 text-sm">©2025</div>
+        <div className="text-white text-sm">©2025</div>
       </motion.nav>
 
       {/* Mobile Menu Button */}

@@ -34,9 +34,9 @@ export const LoadingScreen = ({ onComplete }) => {
                                text-7xl 
                                sm:text-7xl 
                                md:text-7xl 
-                               lg:text-8xl 
-                               xl:text-[10rem]
-                               2xl:text-[12rem]
+                               lg:text-7xl 
+                               xl:text-[7rem]
+                               2xl:text-[9rem]
                                max-w-full relative"
                 >
                     <span className="block sm:inline">Intelligent</span>
