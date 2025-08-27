@@ -44,6 +44,11 @@ html, body {
     -webkit-text-fill-color: transparent;
     animation: colorSweep 2.5s ease-out forwards;
     animation-delay: 0.8s;
+    
+    /* Fix for text clipping */
+    padding: 0.2em 0;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
   }
 
   /* Enhanced reveal on scroll animation */

@@ -30,7 +30,7 @@ export const LoadingScreen = ({ onComplete }) => {
                 }`}
             >
                 <h1
-                    className="font-[Margaret] font-light leading-none text-center text-white animate-color-sweep
+                    className="font-[CHERI] font-light leading-none text-center text-white animate-color-sweep
                                text-7xl 
                                sm:text-7xl 
                                md:text-7xl 
@@ -39,8 +39,8 @@ export const LoadingScreen = ({ onComplete }) => {
                                2xl:text-[9rem]
                                max-w-full relative"
                 >
-                    <span className="block sm:inline">Intelligent</span>
-                    <span className="block sm:inline"> by Design</span>
+                    <span className="block sm:inline">Creative</span>
+                    <span className="block sm:inline"> Designer</span>
                 </h1>
             </div>
         </div>

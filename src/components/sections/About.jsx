@@ -57,9 +57,9 @@ export const About = () => {
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-          className="font-[Margaret] tracking-normal text-center text-[1.7rem] sm:text-[3rem] md:text-[3rem] lg:text-[3rem] 2xl:text-[5rem] font-normal leading-tight w-full text-white"
+          className="font-[CHERI] tracking-normal text-center text-[1.4rem] sm:text-[3rem] md:text-[3rem] lg:text-[3rem] 2xl:text-[5rem] font-normal leading-snug w-full text-white"
         >
-          I'm Mardelito Go the person <br /> you're looking for.
+          I'm Mardelito "Mj" Go the person <br /> you're looking for.
         </motion.h1>
 
         <motion.p

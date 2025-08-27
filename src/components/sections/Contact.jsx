@@ -59,10 +59,10 @@ export const Contact = () => {
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-                className="font-[Margaret] text-4xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-7xl 2xl:text-[9rem] font-extralight
+                className="font-[CHERI] text-4xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-7xl 2xl:text-[9rem] font-extralight tracking-wider
                  leading-tight mt-15"
               >
-                CONCEPT TO CREATION
+                Concept to Creation
               </motion.h1>
             </div>
 

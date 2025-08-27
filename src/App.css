@@ -6,6 +6,13 @@
   }
 
   @font-face {
+    font-family: 'CHERI';
+    src: url('/fonts/CHERI.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
     font-family: 'popReg';
     src: url('/fonts/Poppins-Regular.ttf') format('truetype');
     font-weight: normal;

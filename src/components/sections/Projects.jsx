@@ -28,9 +28,9 @@ export const Projects = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-[Margaret] text-white mb-12 sm:mb-20 lg:mb-32"
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-[CHERI] text-white mb-12 sm:mb-20 lg:mb-32"
           >
-            Featured Works
+            My Prowess
           </motion.h2>
 
           {/* Loading indicator for hover images */}
