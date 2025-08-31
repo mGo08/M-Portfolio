@@ -16,6 +16,12 @@ const RevealParallax = ({ children, delay = 0 }) => (
 
 const works = [
   {
+    image: "/Brut2.png",
+    hoverImages: ["/Brut1.png", "/stat2.png", "/stat3.png"],
+    title: "Status_",
+    desc: "NEWSLETTER DESIGN",
+  },
+  {
     image: "/noctura.webp",
     hoverImages: ["/alt1.png", "/alt2.png"],
     title: "Noctura Apparel Web Design",
