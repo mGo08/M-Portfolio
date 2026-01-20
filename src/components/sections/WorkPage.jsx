@@ -16,9 +16,21 @@ const RevealParallax = ({ children, delay = 0 }) => (
 
 const works = [
   {
+    image: "/Concetp 2.png",
+    hoverImages: ["/Concetp 2 v2.png", "/Concetp 2 v3.png"],
+    title: "1440",
+    desc: "NEWSLETTER DESIGN",
+  },
+  {
     image: "/Brut2.png",
     hoverImages: ["/Brut1.png", "/stat2.png", "/stat3.png"],
     title: "Status_",
+    desc: "NEWSLETTER DESIGN",
+  },
+  {
+    image: "/DCT_176_2.png",
+    hoverImages: ["/DCT_154_3.png", "/DCT_117_3.png", "/DCT_105_2.png", "/DCT_106_5.png"],
+    title: "Static Ads",
     desc: "NEWSLETTER DESIGN",
   },
   {
@@ -53,6 +65,12 @@ const works = [
   },
   {
     image: "/Function_8thAnni_Portrait_Artwork.png",
+    hoverImages: [null],
+    title: "Design Illustration",
+    desc: "APPAREL DESIGN",
+  },
+  {
+    image: "/GTB_FNCT_Shirt_Reliquary_Front 1.png",
     hoverImages: [null],
     title: "Design Illustration",
     desc: "APPAREL DESIGN",

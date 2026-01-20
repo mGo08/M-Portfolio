@@ -8,7 +8,7 @@ const works = [
   { image: "/merch.png", hoverImage: "/Design.png", title: "Design Illustration", desc: "APPAREL DESIGN" },
   { image: "/noctura.webp", hoverImage: null, title: "Noctura Apparel Web Design", desc: "UI LANDING PAGE" },
   { image: "/magwz2.png", hoverImage: "/pt2_nymagazine.png", title: "Magazine Design", desc: "MARKETING AD" },
-  { image: "/NCP.png", hoverImage: null, title: "No Clean Cups", desc: "EVENT ILLUSTRATION" },
+  { image: "/Concetp 2 v3.png", hoverImage: null, title: "1440", desc: "Static Ad" },
   { image: "/Copy of carousel_cap_2.png", hoverImage: "/Copy of carousel_cap_1.png", title: "PLAY", desc: "MARKETING AD / CAROUSEL" },
   { image: "/Function_8thAnni_Portrait_Artwork.png", hoverImage: null, title: "Design Illustration", desc: "APPAREL DESIGN" },
 ];
