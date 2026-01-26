@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import { Analytics } from "@vercel/analytics/react";
 import "./App.css";
 import { Navbar } from "./components/Navbar";
 import { MobileMenu } from "./components/MobileMenu";
@@ -126,6 +127,7 @@ function App() {
           <div className="min-h-screen bg-black">
             <AnimatedRoutes menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
           </div>
+          <Analytics />
         </Router>
       )}
     </>
