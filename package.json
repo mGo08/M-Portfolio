@@ -21,6 +21,7 @@
     "@fontsource/roboto": "^5.1.1",
     "@fontsource/space-grotesk": "^5.1.1",
     "@tailwindcss/vite": "^4.0.3",
+    "@vercel/analytics": "^1.6.1",
     "clsx": "^2.1.1",
     "emailjs-com": "^3.2.0",
     "gsap": "^3.13.0",
