@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { images } from "../../assets/media.js";
 
 // Mock RevealParallax component
 const RevealParallax = ({ children, delay = 0 }) => (
@@ -121,6 +122,7 @@ export const About = () => {
                       Employers / Volunteering
                     </h3>
                     <div className="space-y-3 font-[popLight]">
+                      <p className="text-white">The Feed Media</p>
                       <p className="text-white">Bout It Merch</p>
                       <p className="text-white">KLUBB88</p>
                       <p className="text-white">Function PDX</p>
@@ -137,9 +139,9 @@ export const About = () => {
             <RevealParallax delay={800}>
               <motion.div className="flex justify-center lg:justify-end mt-8 lg:mt-0">
                 <img
-                  src="/family.jpg"
+                  src={images.mj}
                   alt="Workspace setup"
-                  className="w-full max-w-lg h-auto object-cover rounded-2xl shadow-2xl"
+                  className="w-full max-w-lg h-[34rem] object-cover object-[center_72%] rounded-2xl shadow-2xl"
                 />
               </motion.div>
             </RevealParallax>

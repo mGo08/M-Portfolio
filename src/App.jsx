@@ -8,7 +8,7 @@ import { LoadingScreen } from "./components/LoadingScreen";
 import { Home } from "./components/sections/Home";
 import { About } from "./components/sections/About";
 import { Projects } from "./components/sections/Projects";
-import { Contact } from "./components/sections/Contact";
+import { Contact, InteractiveSignalSection } from "./components/sections/Contact";
 import { WorkPage } from "./components/sections/WorkPage.jsx";
 import { PageTransition } from "./components/PageTransition";
 import "@fontsource/roboto";
@@ -78,6 +78,7 @@ const MainPage = ({ menuOpen, setMenuOpen }) => (
     <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
     <Home />
     <Projects />
+    <InteractiveSignalSection />
     <Contact />
   </>
 );

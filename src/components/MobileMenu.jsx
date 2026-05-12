@@ -114,9 +114,8 @@ export const MobileMenu = ({ menuOpen, setMenuOpen, onPageTransition }) => {
                             variants={itemVariants}
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
-                            className={`group relative text-4xl md:text-5xl uppercase cursor-pointer tracking-[0.1em] transition-colors duration-300 font-[popExtraLight] ${
-                                isWorkPage ? "text-white" : "text-white/80 hover:text-white"
-                            }`}
+                            className={`group relative text-4xl md:text-5xl uppercase cursor-pointer tracking-[0.1em] transition-colors duration-300 font-[popExtraLight] ${isWorkPage ? "text-white" : "text-white/80 hover:text-white"
+                                }`}
                         >
                             WORK
                         </motion.a>
@@ -127,9 +126,8 @@ export const MobileMenu = ({ menuOpen, setMenuOpen, onPageTransition }) => {
                             variants={itemVariants}
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
-                            className={`group relative text-4xl md:text-5xl uppercase cursor-pointer tracking-[0.1em] transition-colors duration-300 font-[popExtraLight] ${
-                                isAboutPage ? "text-white" : "text-white/80 hover:text-white"
-                            }`}
+                            className={`group relative text-4xl md:text-5xl uppercase cursor-pointer tracking-[0.1em] transition-colors duration-300 font-[popExtraLight] ${isAboutPage ? "text-white" : "text-white/80 hover:text-white"
+                                }`}
                         >
                             ABOUT
                         </motion.a>
@@ -140,9 +138,8 @@ export const MobileMenu = ({ menuOpen, setMenuOpen, onPageTransition }) => {
                             variants={itemVariants}
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
-                            className={`group relative text-4xl md:text-5xl uppercase cursor-pointer tracking-[0.1em] transition-colors duration-300 font-[popExtraLight] ${
-                                isContactPage ? "text-white" : "text-white/80 hover:text-white"
-                            }`}
+                            className={`group relative text-4xl md:text-5xl uppercase cursor-pointer tracking-[0.1em] transition-colors duration-300 font-[popExtraLight] ${isContactPage ? "text-white" : "text-white/80 hover:text-white"
+                                }`}
                         >
                             CONTACT
                         </motion.a>
@@ -178,7 +175,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen, onPageTransition }) => {
                         className="absolute bottom-6 text-center font-[popLight]"
                     >
                         <div className="text-white/40 text-xs tracking-wider uppercase">
-                            &copy; 2025 Mardelito T. Go
+                            &copy; 2026 Mardelito T. Go
                         </div>
                     </motion.div>
                 </motion.div>

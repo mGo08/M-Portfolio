@@ -93,51 +93,51 @@ export const Navbar = ({ menuOpen, setMenuOpen, onPageTransition }) => {
 
   return (
     <>
-{/* Desktop Navbar */}
-<motion.nav
-  initial={{ opacity: 0, y: -20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, ease: "easeOut" }}
-  className="hidden md:flex fixed top-6 left-0 w-full z-40"
->
-  <div className="flex w-full items-center justify-between px-[25%]">
-    {/* Left: Name */}
-    <a
-      href="/"
-      className="font-[popReg] font-light tracking-widest popLight"
-    >
-      MARDELITO GO
-    </a>
+      {/* Desktop Navbar */}
+      <motion.nav
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="hidden md:flex fixed top-6 left-0 w-full z-40"
+      >
+        <div className="flex w-full items-center justify-between px-[25%]">
+          {/* Left: Name */}
+          <a
+            href="/"
+            className="font-[popReg] font-light tracking-widest popLight"
+          >
+            MARDELITO GO
+          </a>
 
-    {/* Center: Links */}
-    <div className="flex space-x-10 text-md tracking-widest text-white">
-      <a
-        href="/work"
-        onClick={handleWorkNavigation}
-        className={`popLight ${isWorkPage ? "text-white" : ""}`}
-      >
-        WORK
-      </a>
-      <a
-        href="/about"
-        onClick={handleAboutNavigation}
-        className={`popLight ${isAboutPage ? "text-white" : ""}`}
-      >
-        ABOUT
-      </a>
-      <a
-        href="/contact"
-        onClick={handleContactNavigation}
-        className={`popLight ${isContactPage ? "text-white" : ""}`}
-      >
-        CONTACT
-      </a>
-    </div>
+          {/* Center: Links */}
+          <div className="flex space-x-10 text-md tracking-widest text-white">
+            <a
+              href="/work"
+              onClick={handleWorkNavigation}
+              className={`popLight ${isWorkPage ? "text-white" : ""}`}
+            >
+              WORK
+            </a>
+            <a
+              href="/about"
+              onClick={handleAboutNavigation}
+              className={`popLight ${isAboutPage ? "text-white" : ""}`}
+            >
+              ABOUT
+            </a>
+            <a
+              href="/contact"
+              onClick={handleContactNavigation}
+              className={`popLight ${isContactPage ? "text-white" : ""}`}
+            >
+              CONTACT
+            </a>
+          </div>
 
-    {/* Right: Copyright */}
-    <div className="text-sm">©2025</div>
-  </div>
-</motion.nav>
+          {/* Right: Copyright */}
+          <div className="text-sm">©2026</div>
+        </div>
+      </motion.nav>
 
 
       {/* Mobile Menu Button */}

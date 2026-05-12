@@ -3,14 +3,15 @@ import { useState, useEffect, useRef } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { usePreloadImages } from "../usePreLoadImages.js";
 import { Link } from "react-router-dom";
+import { images } from "../../assets/media.js";
 
 const works = [
-  { image: "/merch.png", hoverImage: "/Design.png", title: "Design Illustration", desc: "APPAREL DESIGN" },
-  { image: "/noctura.webp", hoverImage: null, title: "Noctura Apparel Web Design", desc: "UI LANDING PAGE" },
-  { image: "/magwz2.png", hoverImage: "/pt2_nymagazine.png", title: "Magazine Design", desc: "MARKETING AD" },
-  { image: "/Concetp 2 v3.png", hoverImage: null, title: "1440", desc: "Static Ad" },
-  { image: "/Copy of carousel_cap_2.png", hoverImage: "/Copy of carousel_cap_1.png", title: "PLAY", desc: "MARKETING AD / CAROUSEL" },
-  { image: "/Function_8thAnni_Portrait_Artwork.png", hoverImage: null, title: "Design Illustration", desc: "APPAREL DESIGN" },
+  { image: images.merch, hoverImage: images.design, title: "Design Illustration", desc: "APPAREL DESIGN" },
+  { image: images.bliss, hoverImage: null, title: "Bliss", desc: "UI LANDING PAGE" },
+  { image: images.magwz2, hoverImage: images.pt2NyMagazine, title: "Magazine Design", desc: "MARKETING AD" },
+  { image: images.dct1762, hoverImage: null, title: "Daily Drop", desc: "Static Ad" },
+  { image: images.carouselCap2, hoverImage: images.carouselCap1, title: "PLAY", desc: "MARKETING AD / CAROUSEL" },
+  { image: images.functionAnniversary, hoverImage: null, title: "Design Illustration", desc: "APPAREL DESIGN" },
 ];
 
 export const Projects = () => {
@@ -22,7 +23,7 @@ export const Projects = () => {
   return (
     <section id="projects" className="bg-black min-h-screen py-20 md:py-40">
       <RevealOnScroll stagger={0}> {/* no delay on reveal */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-3">
+        <div className="w-full max-w-none mx-auto px-6 sm:px-10 lg:px-16 xl:px-24">
           {/* Heading */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -43,7 +44,7 @@ export const Projects = () => {
           )}
 
           {/* Responsive grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-14 lg:gap-24">
             {works.map((work, index) => (
               <div
                 key={index}
@@ -62,20 +63,20 @@ export const Projects = () => {
 
           {/* Button */}
           <div className="flex justify-center mt-16 sm:mt-24 lg:mt-32">
-          <Link
-            to="/work"
-            onClick={() => {
-              // scroll top after navigation
-              setTimeout(() => window.scrollTo(0, 0), 0);
-            }}
-          >
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              className="px-6 sm:px-10 lg:px-15 py-3 sm:py-4 lg:py-5 border-2 border-white rounded-lg text-base sm:text-xl lg:text-2xl text-white font-[Margaret] hover:bg-white hover:text-black transition"
+            <Link
+              to="/work"
+              onClick={() => {
+                // scroll top after navigation
+                setTimeout(() => window.scrollTo(0, 0), 0);
+              }}
             >
-              see more of my work
-            </motion.button>
-          </Link>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                className="px-6 sm:px-10 lg:px-15 py-3 sm:py-4 lg:py-5 border-2 border-white rounded-lg text-base sm:text-xl lg:text-2xl text-white font-[Margaret] hover:bg-white hover:text-black transition"
+              >
+                see more of my work
+              </motion.button>
+            </Link>
           </div>
         </div>
       </RevealOnScroll>

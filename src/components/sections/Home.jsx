@@ -35,7 +35,7 @@ export const Home = () => {
                            text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 
                            leading-normal"
             >
-                A CREATIVE DESIGNER FROM THE PHILIPPINES <br/> WEAVING TECH & DESIGN TO CREATE SOLUTIONS.
+                CREATIVE AND UI/UX DESIGNER FROM THE PHILIPPINES <br /> WEAVING TECH & DESIGN TO CREATE SOLUTIONS.
             </motion.p>
         </section>
     );

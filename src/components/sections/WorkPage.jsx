@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
-import { usePreloadImages } from "../usePreLoadImages.js";
+import { images } from "../../assets/media.js";
 
 // Same RevealParallax helper from About.jsx
 const RevealParallax = ({ children, delay = 0 }) => (
@@ -16,82 +16,163 @@ const RevealParallax = ({ children, delay = 0 }) => (
 
 const works = [
   {
-    image: "/Concetp 2.png",
-    hoverImages: ["/Concetp 2 v2.png", "/Concetp 2 v3.png"],
+    image: images.montra,
+    title: "Montra",
+    category: "UI/UX",
+  },
+  {
+    image: images.bliss,
+    title: "Bliss",
+    category: "UI/UX",
+  },
+  {
+    image: images.solara,
+    title: "Solara",
+    category: "UI/UX",
+  },
+  {
+    image: images.concept2,
     title: "1440",
-    desc: "NEWSLETTER DESIGN",
+    category: "Static DTC designs",
   },
   {
-    image: "/Brut2.png",
-    hoverImages: ["/Brut1.png", "/stat2.png", "/stat3.png"],
+    image: images.brut2,
+    hoverImages: [images.brut1, images.stat2],
     title: "Status_",
-    desc: "NEWSLETTER DESIGN",
+    category: "Static DTC designs",
   },
   {
-    image: "/DCT_176_2.png",
-    hoverImages: ["/DCT_154_3.png", "/DCT_117_3.png", "/DCT_105_2.png", "/DCT_106_5.png"],
+    image: images.dct1762,
+    hoverImages: [images.dct1543, images.dct1173, images.dct1052, images.dct1065],
     title: "Static Ads",
-    desc: "NEWSLETTER DESIGN",
+    category: "Static DTC designs",
   },
   {
-    image: "/noctura.webp",
-    hoverImages: ["/alt1.png", "/alt2.png"],
+    image: images.dct160,
+    title: "Static DTC Design",
+    category: "Static DTC designs",
+  },
+  {
+    image: images.dct1603,
+    title: "Static DTC Design",
+    category: "Static DTC designs",
+  },
+  {
+    image: images.dct1161,
+    title: "Static DTC Design",
+    category: "Static DTC designs",
+  },
+  {
+    image: images.dct1301,
+    title: "Static DTC Design",
+    category: "Static DTC designs",
+  },
+  {
+    image: images.dct121Sameflight5,
+    title: "Static DTC Design",
+    category: "Static DTC designs",
+  },
+  {
+    image: images.dct1062,
+    title: "Static DTC Design",
+    category: "Static DTC designs",
+  },
+  {
+    image: images.dct009Demodocket2,
+    title: "Static DTC Design",
+    category: "Static DTC designs",
+  },
+  {
+    image: images.dct1172,
+    title: "Static DTC Design",
+    category: "Static DTC designs",
+  },
+  {
+    image: images.dct1132,
+    title: "Static DTC Design",
+    category: "Static DTC designs",
+  },
+  {
+    image: images.noctura,
     title: "Noctura Apparel Web Design",
-    desc: "UI LANDING PAGE",
+    category: "UI/UX",
   },
   {
-    image: "/magwz2.png",
-    hoverImages: ["/pt2_nymagazine.png"],
+    image: images.magwz2,
+    hoverImages: [images.pt2NyMagazine],
     title: "Magazine Design",
-    desc: "MARKETING AD",
+    category: "Marketing Design",
   },
   {
-    image: "/EBW-Table-Tent.png",
-    hoverImages: ["/TBSbanner.png", "/Meanwhile.png"],
+    image: images.ebwTableTent,
+    hoverImages: [images.tbsBanner, images.meanwhile],
     title: "BOUT IT",
-    desc: "LEAD CREATIVE DESIGNER",
+    category: "Marketing Design",
   },
   {
-    image: "/Copy of carousel_cap_2.png",
-    hoverImages: ["/Copy of carousel_cap_1.png", "/Copy of carousel_cap_3.png"],
+    image: images.carouselCap2,
+    hoverImages: [images.carouselCap1],
     title: "PLAY",
-    desc: "MARKETING AD / CAROUSEL",
+    category: "Marketing Design",
   },
   {
-    image: "/VH.png",
-    hoverImages: ["/OBL.png", "/TBS.png", "/VH2.png", "/EBW.png", "/GIGANTIC.png", "/FX.png", "PP.png"],
+    image: images.vh,
+    hoverImages: [images.obl, images.tbs, images.vh2, images.ebw, images.gigantic, images.fx, images.pp],
     title: "LOGOS",
-    desc: "COLLECTION OF LOGOS AND WORDMARKS",
+    category: "Logos",
   },
   {
-    image: "/Function_8thAnni_Portrait_Artwork.png",
-    hoverImages: [null],
+    image: images.functionAnniversary,
     title: "Design Illustration",
-    desc: "APPAREL DESIGN",
+    category: "Illustration",
   },
   {
-    image: "/GTB_FNCT_Shirt_Reliquary_Front 1.png",
-    hoverImages: [null],
+    image: images.gtbReliquaryFront,
     title: "Design Illustration",
-    desc: "APPAREL DESIGN",
+    category: "Illustration",
   },
   {
-    image: "/emaildesign.png",
-    hoverImages: [null],
+    image: images.emailDesign,
     title: "Vardy",
-    desc: "EMAIL DESIGN",
+    category: "Email Design",
   },
   {
-    image: "/LOGO.png",
-    hoverImages: ["/LOGOV2.png", "/BC.png", "/Mockup.png", "/bg1.png", "/bg2.png"],
+    image: images.tiffany,
+    title: "Tiffany",
+    category: "Email Design",
+  },
+  {
+    image: images.logo,
+    hoverImages: [images.logoV2],
     title: "MOELA",
-    desc: "CREATIVE DIRECTION & BRAND IDENTITY",
+    category: "Logos",
   },
 ];
 
+const categories = [
+  "All",
+  "Static DTC designs",
+  "Email Design",
+  "UI/UX",
+  "Illustration",
+  "Marketing Design",
+  "Logos",
+];
+
 export const WorkPage = () => {
-  const hoverImages = works.flatMap((w) => w.hoverImages || []);
-  const { imagesLoaded, loadedCount, total } = usePreloadImages(hoverImages);
+  const [activeCategory, setActiveCategory] = useState("All");
+  const contentRef = useRef(null);
+  const filteredWorks =
+    activeCategory === "All"
+      ? works
+      : works.filter((work) => work.category === activeCategory);
+  const visibleWorks = filteredWorks.flatMap((work) =>
+    [work.image, ...(work.hoverImages || [])].map((image, imageIndex) => ({
+      ...work,
+      image,
+      imageIndex,
+    }))
+  );
 
   // parallax hero state
   const [heroOpacity, setHeroOpacity] = useState(1);
@@ -126,8 +207,25 @@ export const WorkPage = () => {
     return () => window.removeEventListener("scroll", smoothHandleScroll);
   }, []);
 
+  const handleCategoryChange = (category) => {
+    if (category === activeCategory) return;
+
+    setActiveCategory(category);
+
+    requestAnimationFrame(() => {
+      const contentTop =
+        (contentRef.current?.getBoundingClientRect().top || 0) + window.scrollY;
+
+      window.scrollTo({
+        top: contentTop,
+        left: 0,
+        behavior: "smooth",
+      });
+    });
+  };
+
   return (
-    <section id="work" className="min-h-screen bg-black relative overflow-hidden">
+    <section id="work" className="min-h-screen bg-black relative overflow-x-clip">
       {/* Hero Heading with Parallax */}
       <motion.div
         className="fixed inset-0 flex flex-col justify-center items-center px-6 w-full mx-auto z-10 space-y-7"
@@ -139,7 +237,7 @@ export const WorkPage = () => {
           transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
           className="font-[CHERI] tracking-normal text-center text-[1.7rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[4rem] 2xl:text-[5rem] font-normal leading-tight w-full text-white"
         >
-          6,000+ hours on my craft
+          7,000+ hours on my craft
         </motion.h1>
 
         <motion.p
@@ -165,120 +263,159 @@ export const WorkPage = () => {
       <div className="h-screen" />
 
       {/* Content */}
-      <motion.div className="max-w-4xl mx-auto relative z-10 py-40 px-6 space-y-32 bg-black">
-        {/* Loading indicator */}
-        {!imagesLoaded && (
-          <div className="flex items-center justify-center mb-8">
-            <div className="text-white text-lg font-[popLight]">
-              Loading hover images... ({loadedCount}/{total})
-            </div>
-          </div>
-        )}
+      <motion.div
+        ref={contentRef}
+        className="w-full max-w-none mx-auto relative z-10 py-24 sm:py-32 lg:py-40 px-6 sm:px-10 lg:px-16 xl:px-24 bg-black"
+        style={{
+          overflowAnchor: "none",
+        }}
+      >
+        <div className="relative md:grid md:grid-cols-[minmax(0,1fr)_8rem] md:items-start md:gap-10 xl:grid-cols-[minmax(0,1fr)_9rem]">
+          <aside className="md:order-2 md:sticky md:top-20 md:self-start">
+            <FilterSidebar
+              activeCategory={activeCategory}
+              onCategoryChange={handleCategoryChange}
+            />
+          </aside>
 
-        <RevealParallax delay={200}>
-          <div className="flex flex-col items-center gap-24">
-            {works.map((work, index) => (
-              <div key={index} className="w-full max-w-3xl text-center">
-                <HoverImage work={work} isLoaded={imagesLoaded} />
-                <h3 className="mt-6 text-2xl sm:text-3xl font-[popMed] text-white">
-                  {work.title}
-                </h3>
-                <p className="mt-2 text-lg leading-relaxed text-gray-400 font-[popLight]">
-                  {work.desc}
-                </p>
-              </div>
-            ))}
+          <div className="md:order-1">
+            <RevealParallax delay={200}>
+              <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 md:order-1">
+                <AnimatePresence initial={false}>
+                  {visibleWorks.map((work) => (
+                    <motion.div
+                      key={`${work.title}-${work.imageIndex}-${work.image}`}
+                      className="w-full"
+                      initial={{ opacity: 0, scale: 0.98 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.98 }}
+                      transition={{ duration: 0.25, ease: "easeOut" }}
+                    >
+                      <WorkImage work={work} />
+                    </motion.div>
+                  ))}
+                </AnimatePresence>
+              </motion.div>
+            </RevealParallax>
           </div>
-        </RevealParallax>
+        </div>
       </motion.div>
     </section>
   );
 };
 
-// HoverImage with smooth crossfade looping images
-const HoverImage = ({ work, isLoaded }) => {
-  const [hovered, setHovered] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-  const intervalRef = useRef(null);
-  const cooldownRef = useRef(false);
+const FilterSidebar = ({ activeCategory, onCategoryChange }) => {
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
 
-  const hasHoverImages = work.hoverImages && work.hoverImages.length > 0;
-
-  useEffect(() => {
-    setIsMobile(window.innerWidth < 1024);
-    const handleResize = () => setIsMobile(window.innerWidth < 1024);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  // Auto-loop on mobile
-  useEffect(() => {
-    if (isMobile && hasHoverImages) {
-      intervalRef.current = setInterval(() => {
-        setCurrentIndex((prev) => (prev + 1) % work.hoverImages.length);
-      }, 2500); // slower cycle
-      return () => clearInterval(intervalRef.current);
-    }
-  }, [isMobile, hasHoverImages, work.hoverImages]);
-
-  const startLoop = () => {
-    if (!hasHoverImages || isMobile || cooldownRef.current) return;
-
-    setHovered(true);
-    cooldownRef.current = true;
-
-    intervalRef.current = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % work.hoverImages.length);
-    }, 2500);
-
-    // prevent spam hover
-    setTimeout(() => {
-      cooldownRef.current = false;
-    }, 1000);
-  };
-
-  const stopLoop = () => {
-    if (isMobile) return;
-    setHovered(false);
-    clearInterval(intervalRef.current);
-    setCurrentIndex(0);
+  const handleMobileCategoryChange = (category) => {
+    onCategoryChange(category);
+    setIsFilterOpen(false);
   };
 
   return (
-    <div
-      className="w-full overflow-hidden rounded-lg relative cursor-pointer"
-      onMouseEnter={startLoop}
-      onMouseLeave={stopLoop}
+    <nav
+      className="sticky top-4 z-30 mb-10 bg-black/80 py-2 backdrop-blur md:static md:mb-0 md:bg-transparent md:py-0 md:backdrop-blur-none"
+      aria-label="Work filters"
     >
-      {/* Base Image */}
+      <label className="sr-only" htmlFor="work-category-filter">
+        Filter work by category
+      </label>
+      <div className="relative md:hidden">
+        <button
+          id="work-category-filter"
+          type="button"
+          aria-haspopup="listbox"
+          aria-expanded={isFilterOpen}
+          onClick={() => setIsFilterOpen((current) => !current)}
+          className="flex h-11 w-full items-center justify-between border-b border-white/15 font-[popLight] text-[0.66rem] uppercase tracking-[0.16em] text-white outline-none transition-colors duration-300 focus:border-white/50"
+        >
+          <span>{activeCategory}</span>
+          <span
+            className={`h-1.5 w-1.5 rotate-45 border-b border-r border-white/50 transition-transform duration-300 ${isFilterOpen ? "-translate-y-0.5 rotate-[225deg]" : "-translate-y-1"
+              }`}
+          />
+        </button>
+
+        <AnimatePresence>
+          {isFilterOpen && (
+            <motion.div
+              role="listbox"
+              aria-labelledby="work-category-filter"
+              initial={{ opacity: 0, y: -8, clipPath: "inset(0 0 100% 0)" }}
+              animate={{ opacity: 1, y: 0, clipPath: "inset(0 0 0% 0)" }}
+              exit={{ opacity: 0, y: -6, clipPath: "inset(0 0 100% 0)" }}
+              transition={{ duration: 0.22, ease: "easeOut" }}
+              className="absolute left-0 right-0 top-full z-40 mt-2 overflow-hidden border border-white/15 bg-black/95 py-2 shadow-2xl shadow-black/40 backdrop-blur"
+            >
+              {categories.map((category) => {
+                const isActive = activeCategory === category;
+
+                return (
+                  <button
+                    key={category}
+                    type="button"
+                    role="option"
+                    aria-selected={isActive}
+                    onClick={() => handleMobileCategoryChange(category)}
+                    className={`flex min-h-10 w-full items-center justify-between px-3 text-left font-[popLight] text-[0.62rem] uppercase tracking-[0.15em] transition-colors duration-200 ${isActive
+                      ? "text-white"
+                      : "text-white/45 hover:bg-white/5 hover:text-white"
+                      }`}
+                  >
+                    <span>{category}</span>
+                    <span
+                      className={`h-px shrink-0 transition-all duration-300 ${isActive ? "w-6 bg-white" : "w-0 bg-white/0"
+                        }`}
+                    />
+                  </button>
+                );
+              })}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
+      <div className="hidden md:flex md:flex-col md:items-end md:gap-5">
+        {categories.map((category) => {
+          const isActive = activeCategory === category;
+
+          return (
+            <button
+              key={category}
+              type="button"
+              aria-pressed={isActive}
+              onClick={() => onCategoryChange(category)}
+              className={`group flex min-h-0 min-w-0 items-center justify-end gap-2 px-0 text-left font-[popLight] text-[0.62rem] uppercase tracking-[0.16em] transition-all duration-300 ${isActive
+                ? "text-white"
+                : "text-white/35 hover:text-white/80"
+                }`}
+            >
+              <span className="whitespace-nowrap">{category}</span>
+              <span
+                className={`h-px shrink-0 transition-all duration-300 ${isActive ? "w-6 bg-white" : "w-3 bg-white/35 group-hover:w-5 group-hover:bg-white/70"
+                  }`}
+              />
+            </button>
+          );
+        })}
+      </div>
+    </nav>
+  );
+};
+
+const WorkImage = ({ work }) => {
+  return (
+    <div className="w-full overflow-hidden rounded-lg relative">
       <motion.img
         src={work.image}
         alt={work.title}
-        className="w-full h-full object-cover"
+        className="block w-full h-auto object-cover"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        whileHover={{ scale: isLoaded ? 1.05 : 1 }}
-        transition={{ duration: 1.2, ease: "easeInOut" }}
+        whileHover={{ scale: 1.03 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
         loading="eager"
       />
-
-      {/* Hover Looping Images with soft crossfade */}
-      <AnimatePresence>
-        {(hovered || isMobile) && hasHoverImages && (
-          <motion.img
-            key={currentIndex}
-            src={work.hoverImages[currentIndex]}
-            alt={`${work.title} alt ${currentIndex}`}
-            className="w-full h-full object-cover absolute inset-0"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.2, ease: "easeInOut" }}
-            loading="eager"
-          />
-        )}
-      </AnimatePresence>
     </div>
   );
 };

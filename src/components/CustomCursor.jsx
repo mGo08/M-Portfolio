@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import useCustomCursor from "./useCustomCursor";
 import { useLocation } from "react-router-dom";
 import "../index.css";
+import { images } from "../assets/media.js";
 
 const CustomCursor = () => {
   const { position, hovered, active, setHovered } = useCustomCursor();
@@ -89,7 +90,7 @@ const CustomCursor = () => {
       {/* Default Arrow */}
       <img
         ref={defaultRef}
-        src="/whitecircle.svg"
+        src={images.whiteCircle}
         alt="default arrow"
         className="cursor-default"
       />
@@ -97,7 +98,7 @@ const CustomCursor = () => {
       {/* Hover Circle */}
       <img
         ref={circleRef}
-        src="/CircleCursor.svg"
+        src={images.circleCursor}
         alt="circle"
         className="cursor-circle"
       />
@@ -105,7 +106,7 @@ const CustomCursor = () => {
       {/* Hover Arrow */}
       <img
         ref={arrowRef}
-        src="/ArrowCursor.svg"
+        src={images.arrowCursor}
         alt="arrow"
         className="cursor-arrow"
       />
