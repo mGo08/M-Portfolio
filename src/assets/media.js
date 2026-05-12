@@ -24,6 +24,7 @@ import dct1543 from "./images/DCT_154_3.png";
 import dct160 from "./images/DCT_160.png";
 import dct1603 from "./images/DCT_160_3.png";
 import dct1762 from "./images/DCT_176_2.png";
+import dtcCollit from "./images/DTC_COLLIT (1).png";
 import design from "./images/Design.png";
 import ebwTableTent from "./images/EBW-Table-Tent.png";
 import ebw from "./images/EBW.png";
@@ -32,6 +33,7 @@ import family from "./images/family.jpg";
 import functionAnniversary from "./images/Function_8thAnni_Portrait_Artwork.png";
 import fx from "./images/FX.png";
 import gigantic from "./images/GIGANTIC.png";
+import gorjana from "./images/Gorjana.png";
 import gtbReliquaryFront from "./images/GTB_FNCT_Shirt_Reliquary_Front 1.png";
 import logo from "./images/LOGO.png";
 import logoV2 from "./images/LOGOV2.png";
@@ -83,6 +85,7 @@ export const images = {
   dct160,
   dct1603,
   dct1762,
+  dtcCollit,
   design,
   ebw,
   ebwTableTent,
@@ -91,6 +94,7 @@ export const images = {
   functionAnniversary,
   fx,
   gigantic,
+  gorjana,
   gtbReliquaryFront,
   logo,
   logoV2,

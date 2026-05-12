@@ -93,6 +93,11 @@ const works = [
     category: "Static DTC designs",
   },
   {
+    image: images.dtcCollit,
+    title: "Static DTC Design",
+    category: "Static DTC designs",
+  },
+  {
     image: images.noctura,
     title: "Noctura Apparel Web Design",
     category: "UI/UX",
@@ -139,6 +144,11 @@ const works = [
   {
     image: images.tiffany,
     title: "Tiffany",
+    category: "Email Design",
+  },
+  {
+    image: images.gorjana,
+    title: "Gorjana",
     category: "Email Design",
   },
   {
