@@ -53,6 +53,9 @@ import solara from "./images/Solara.png";
 import tbs from "./images/TBS.png";
 import tbsBanner from "./images/TBSbanner.png";
 import tiffany from "./images/Tiffany.png";
+import apparelBlackTee from "./images/unisex-garment-dyed-heavyweight-t-shirt-black-front-and-back-684a3f7e3d52b.png";
+import apparelBlackTeeAlt from "./images/unisex-garment-dyed-heavyweight-t-shirt-black-front-and-back-6852eadd17ce6 (1).png";
+import apparelWhiteTee from "./images/unisex-garment-dyed-heavyweight-t-shirt-white-front-and-back-6852eaf517495 (1).png";
 import vh from "./images/VH.png";
 import vh2 from "./images/VH2.png";
 import whiteCircle from "./images/whitecircle.svg";
@@ -114,6 +117,9 @@ export const images = {
   tbs,
   tbsBanner,
   tiffany,
+  apparelBlackTee,
+  apparelBlackTeeAlt,
+  apparelWhiteTee,
   vh,
   vh2,
   whiteCircle,

@@ -137,6 +137,21 @@ const works = [
     category: "Illustration",
   },
   {
+    image: images.apparelBlackTee,
+    title: "Apparel Design",
+    category: "Apparel",
+  },
+  {
+    image: images.apparelWhiteTee,
+    title: "Apparel Design",
+    category: "Apparel",
+  },
+  {
+    image: images.apparelBlackTeeAlt,
+    title: "Apparel Design",
+    category: "Apparel",
+  },
+  {
     image: images.emailDesign,
     title: "Vardy",
     category: "Email Design",
@@ -165,6 +180,7 @@ const categories = [
   "Email Design",
   "UI/UX",
   "Illustration",
+  "Apparel",
   "Marketing Design",
   "Logos",
 ];
